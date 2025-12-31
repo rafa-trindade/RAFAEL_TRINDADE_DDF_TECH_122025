@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 # ------------------------------------------------------------------
 # PATH SETUP
 # ------------------------------------------------------------------
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.append(str(PROJECT_ROOT))
 
 from config.data_connections import get_s3_client
@@ -55,33 +55,45 @@ MAX_LANDING_RUNS = int(os.getenv("LANDING_MAX_RUNS", 3))
 # ------------------------------------------------------------------
 # LOCAL PATHS
 # ------------------------------------------------------------------
-RAW_DIR = PROJECT_ROOT / "data/landing/olist/raw"
-PARQUET_DIR = PROJECT_ROOT / "data/landing/olist/parquet"
+CSV_DIR = PROJECT_ROOT / "data/landing/csv"
+PARQUET_DIR = PROJECT_ROOT / "data/landing/parquet"
 
-RAW_DIR.mkdir(parents=True, exist_ok=True)
+CSV_DIR.mkdir(parents=True, exist_ok=True)
 PARQUET_DIR.mkdir(parents=True, exist_ok=True)
 
 # ------------------------------------------------------------------
 # KAGGLE DOWNLOAD
 # ------------------------------------------------------------------
 def download_kaggle_dataset():
-    print("📥 Baixando dataset do Kaggle...")
+    print(f"🔍 Verificando config em: {os.environ['KAGGLE_CONFIG_DIR']}")
+    
+    token_path = Path(os.environ["KAGGLE_CONFIG_DIR"]) / "kaggle.json"
+    if not token_path.exists():
+        print(f"❌ ERRO: Arquivo {token_path} não encontrado!")
+        return
 
-    subprocess.run(
-        [
-            "kaggle",
-            "datasets",
-            "download",
-            "-d",
-            DATASET,
-            "-p",
-            str(RAW_DIR),
-            "--unzip",
-        ],
-        check=True,
-    )
+    print(f"📥 Baixando dataset para: {CSV_DIR}")
+    CSV_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("✅ Download concluído")
+    try:
+        command = f"kaggle datasets download -d {DATASET} -p {str(CSV_DIR)} --unzip"
+        result = subprocess.run(
+            command,
+            shell=True, 
+            capture_output=True,
+            text=True
+        )
+
+        if result.returncode != 0:
+            print(f"❌ Erro do Kaggle CLI:\n{result.stderr}")
+            print(f"💡 Dica: Verifique se você aceitou os termos do dataset no site do Kaggle.")
+        else:
+            print(f"✅ Download concluído!")
+            files = list(CSV_DIR.glob("*"))
+            print(f"📂 Arquivos na pasta: {[f.name for f in files]}")
+            
+    except Exception as e:
+        print(f"❌ Erro ao executar comando: {e}")
 
 
 # ------------------------------------------------------------------
@@ -98,9 +110,14 @@ def clean_parquet_dir():
 # CSV → Parquet (somente selecionados)
 # ------------------------------------------------------------------
 def csv_to_parquet():
-    print("🔄 Convertendo CSV para Parquet (datasets permitidos)...")
+    print("🔄 Convertendo CSV para Parquet...")
+    csv_files = list(CSV_DIR.glob("*.csv"))
+    
+    if not csv_files:
+        print("⚠️ Nenhum arquivo CSV encontrado em CSV_DIR!")
+        return
 
-    for csv_file in RAW_DIR.glob("*.csv"):
+    for csv_file in csv_files:
         dataset_name = csv_file.stem
 
         if dataset_name not in ALLOWED_DATASETS:
@@ -160,9 +177,9 @@ def run():
 
     download_kaggle_dataset()
 
-    clean_parquet_dir()
     csv_to_parquet()
     upload_to_minio()
+    clean_parquet_dir()
 
     print("🧹 Aplicando política de retenção...")
     cleanup_old_runs(
