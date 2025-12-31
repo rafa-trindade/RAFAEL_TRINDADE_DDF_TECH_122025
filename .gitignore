@@ -1,4 +1,7 @@
 .venv/
 *.env
+*.csv
+*.parquet
 *.tmp
+kaggle.json
 __pycache__/
