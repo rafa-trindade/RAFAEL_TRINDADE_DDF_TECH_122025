@@ -1,0 +1,60 @@
+name: 'rafael_trindade_ddf_tech'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+# ----------------------------------
+# Paths
+# ----------------------------------
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# ----------------------------------
+# Models
+# ----------------------------------
+models:
+  rafael_trindade_ddf_tech:
+
+    staging:
+      +schema: staging
+      +materialized: view
+
+    core:
+      +schema: core
+      +materialized: table
+
+    marts:
+      +schema: marts
+      +materialized: table
+
+# ----------------------------------
+# Seeds
+# ----------------------------------
+seeds:
+  rafael_trindade_ddf_tech:
+
+    dim_date:
+      +schema: core
+      +column_types:
+        chave_data: integer
+        data: date
+        ano: integer
+        mes: integer
+        dia: integer
+
+    dim_time:
+      +schema: core
+      +column_types:
+        chave_hora: integer
+        hora: integer
+        minuto: integer
