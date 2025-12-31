@@ -6,7 +6,7 @@ ingestão, transformação e armazenamento de dados.
 
 ## 🛠️ Arquitetura Local
 
-![Arquitetura Local](arquitetura_prop.png)
+![Arquitetura Local](arquitetura_proposta.png)
 
 | Componente          | Papel na Arquitetura                              | Responsabilidades Técnicas                                                                                           | Diferencial Estratégico                                                                         |
 | :------------------ | :------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- |
