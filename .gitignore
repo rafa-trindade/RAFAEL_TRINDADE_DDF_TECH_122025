@@ -1,7 +1,12 @@
 .venv/
+dbt/dbt_packages/
+dbt/target
+dbt/package-lock.yml
+dbt/.user.yml
 *.env
 *.csv
 *.parquet
 *.tmp
+*.log
 kaggle.json
 __pycache__/
