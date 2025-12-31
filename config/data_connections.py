@@ -4,18 +4,18 @@ from urllib.parse import urlparse
 from dotenv import load_dotenv
 import boto3
 import duckdb
+import psycopg2
 
 load_dotenv(override=True)
 
 # --------------------------------------------------------------
-# MinIO/S3
+# MinIO / S3
 # --------------------------------------------------------------
 def get_minio_endpoint() -> str:
     return os.getenv("S3_ENDPOINT")
 
 
 def get_s3_client():
-
     endpoint = get_minio_endpoint()
     if not endpoint:
         raise RuntimeError("S3_ENDPOINT não definido")
@@ -27,6 +27,21 @@ def get_s3_client():
         aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
         region_name=os.getenv("AWS_DEFAULT_REGION", "us-east-1"),
     )
+
+
+# --------------------------------------------------------------
+# PostgreSQL
+# --------------------------------------------------------------
+def get_postgres_connection():
+
+    return psycopg2.connect(
+        host=os.getenv("POSTGRES_HOST"),
+        port=os.getenv("POSTGRES_PORT"),
+        dbname=os.getenv("POSTGRES_DB"),
+        user=os.getenv("POSTGRES_USER"),
+        password=os.getenv("POSTGRES_PASSWORD"),
+    )
+
 
 
 # --------------------------------------------------------------
