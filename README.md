@@ -123,15 +123,15 @@ O planejamento do projeto foi realizado seguindo boas práticas do PMBOK, combin
 
 
 ## Item 1 - Base de Dados
-* **Dataset:** Brazilian E-Commerce Dataset by Olist (Kaggle).
+**Dataset:** Brazilian E-Commerce Dataset by Olist (Kaggle).
 
-* **Justificativa:** 
+**Justificativa:** 
 - Dataset real, amplamente utilizado em projetos analíticos
 - Domínio aderente ao cenário de e-commerce
 - Volume superior a 100.000 registros
 - Contém dados transacionais e descritivos
 
-* **Principais tabelas:**
+**Principais tabelas:**
 - `olist_orders_dataset`
 - `olist_order_items_dataset`
 - `olist_products_dataset`
