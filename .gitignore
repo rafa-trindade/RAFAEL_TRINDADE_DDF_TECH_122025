@@ -5,6 +5,7 @@ dbt/package-lock.yml
 dbt/.user.yml
 dbt/logs
 data/
+pg_ssl/
 *.env
 *.tmp
 kaggle.json
