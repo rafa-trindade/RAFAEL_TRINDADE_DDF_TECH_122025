@@ -1,0 +1,145 @@
+version: 2
+
+models:
+
+  # =========================
+  # FACT
+  # =========================
+  - name: fact_order_items
+    description: >
+      Tabela fato no grão de item de pedido.
+      Cada linha representa um produto dentro de um pedido.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - order_id
+              - order_item_id
+
+    columns:
+      - name: order_id
+        description: "Identificador do pedido."
+        tests:
+          - not_null
+
+      - name: order_item_id
+        description: "Identificador do item dentro do pedido."
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "Chave estrangeira para dim_customers."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+
+      - name: product_id
+        description: "Chave estrangeira para dim_products."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id
+
+      - name: chave_data
+        description: "Chave de data no formato YYYYMMDD."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: chave_data
+
+      - name: chave_hora
+        description: "Minutos desde meia-noite (0–1439)."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_time')
+                field: chave_hora
+
+      - name: price
+        description: "Preço unitário do item."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+
+      - name: freight_value
+        description: "Valor do frete do item."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+
+      - name: total_item_value
+        description: "Preço do item somado ao frete."
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "= price + freight_value"
+
+
+  # =========================
+  # DIM_CUSTOMERS
+  # =========================
+  - name: dim_customers
+    description: "Dimensão de clientes."
+
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_city
+        tests:
+          - not_null
+
+      - name: customer_state
+        tests:
+          - not_null
+
+
+  # =========================
+  # DIM_PRODUCTS
+  # =========================
+  - name: dim_products
+    description: "Dimensão de produtos."
+
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+
+  # =========================
+  # DIM_DATE
+  # =========================
+seeds:
+  - name: dim_date
+    columns:
+      - name: chave_data
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_time
+    columns:
+      - name: chave_hora
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "between 0 and 1439"
