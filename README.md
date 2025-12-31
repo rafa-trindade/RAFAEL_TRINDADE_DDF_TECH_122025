@@ -180,7 +180,7 @@ A **catalogação dos dados** foi realizada diretamente na plataforma Dadosfera,
 **Ativo na Dadosfera:** [[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]  [[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]
 
 
-## Item 4 – Data Quality
+## Item 4 - Data Quality
 
 ### Abordagem
 
@@ -188,8 +188,8 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 ### Ferramentas Utilizadas
 
-- **Pandera (Python)** – validação de schemas
-- **dbt tests** – testes analíticos
+- **Pandera (Python)** - validação de schemas
+- **dbt tests** - testes analíticos
 
 ### Entregável
 
@@ -198,7 +198,7 @@ Geração de relatório de qualidade para identificação de nulos e tipos incor
 **Resultado:** [[PANDERA REPORTS](https://github.com/rafa-trindade/RAFAEL_TRINDADE_DDF_TECH_122025/tree/main/reports/pandera)]  [[DBT REPORTS](https://github.com/rafa-trindade/RAFAEL_TRINDADE_DDF_TECH_122025/tree/main/reports/dbt)]
 
 
-## Item 6 – Modelagem de Dados
+## Item 6 - Modelagem de Dados
 
 Modelagem dimensional seguindo os princípios de Ralph Kimball.
 
