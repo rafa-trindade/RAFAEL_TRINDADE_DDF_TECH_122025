@@ -18,6 +18,7 @@ sys.path.append(str(PROJECT_ROOT))
 
 from config.data_connections import get_s3_client
 from scripts.utils.lake_retetions import cleanup_old_runs
+from scripts.quality.validate_landing_schema import validate_landing_schema
 
 # ------------------------------------------------------------------
 # CONFIG
@@ -107,28 +108,23 @@ def clean_parquet_dir():
 
 
 # ------------------------------------------------------------------
-# CSV → Parquet (somente selecionados)
+# CSV → QUALITY CHECK → Parquet (somente selecionados)
 # ------------------------------------------------------------------
 def csv_to_parquet():
     print("🔄 Convertendo CSV para Parquet...")
     csv_files = list(CSV_DIR.glob("*.csv"))
-    
-    if not csv_files:
-        print("⚠️ Nenhum arquivo CSV encontrado em CSV_DIR!")
-        return
 
     for csv_file in csv_files:
         dataset_name = csv_file.stem
 
         if dataset_name not in ALLOWED_DATASETS:
-            print(f"  - Ignorado: {csv_file.name}")
+            print(f"   - Ignorado: {csv_file.name}")
             continue
 
         parquet_file = PARQUET_DIR / f"{dataset_name}.parquet"
 
-        print(f"  - {csv_file.name} → {parquet_file.name}")
-
         df = pd.read_csv(csv_file)
+        df["run_id"] = int(RUN_ID.replace("_", ""))
 
         df.to_parquet(
             parquet_file,
@@ -136,7 +132,16 @@ def csv_to_parquet():
             index=False,
         )
 
-    print("✅ Conversão concluída")
+        # --------------------------------------------------
+        # QUALITY CHECK (Landing - Schema)
+        # --------------------------------------------------
+        validate_landing_schema(
+            dataset_name=dataset_name,
+            parquet_path=parquet_file,
+            run_id=RUN_ID,  # <-- Adicionado aqui
+        )
+
+    print("✅ Conversão + Qualidade concluídas")
 
 
 # ------------------------------------------------------------------
