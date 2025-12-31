@@ -244,14 +244,14 @@ Pipeline de processamento automatizado utilizando os Steps da Dadosfera.
 
 ---
 
-### Item 9 - Data App (Streamlit)
+## Item 9 - Data App (Streamlit)
 Desenvolvimento de uma aplicação para exploração de insights.
 * **URL do App:** [LINK PARA O STREAMLIT CLOUD]
 * **Funcionalidade:**
 
 ---
 
-## 🎥 Item 10 - Apresentação (Pitch Técnico)
+## Item 10 - Apresentação (Pitch Técnico)
 Apresentação da solução e demonstração da viabilidade de substituição da arquitetura atual pela Dadosfera.
 
 👉 **[LINK PARA O VÍDEO NO YOUTUBE - NÃO LISTADO]**
