@@ -13,6 +13,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     volumes:
+      - ./pg_ssl:/var/lib/postgresql/ssl
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
