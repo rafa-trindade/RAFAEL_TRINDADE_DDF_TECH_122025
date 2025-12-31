@@ -174,6 +174,7 @@ A ingestão foi dividida em etapas claras:
 - PostgreSQL em container com SSL habilitado
 
 A **carga** foi realizada a partir de uma VPS dedicada, configurada para permitir integração segura com a plataforma.
+
 A **catalogação dos dados** foi realizada diretamente na plataforma Dadosfera, onde os ativos ingeridos foram registrados, descritos e organizados, possibilitando sua exploração, governança e reutilização.
 
 **Ativo na Dadosfera:** [[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]  [[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]
