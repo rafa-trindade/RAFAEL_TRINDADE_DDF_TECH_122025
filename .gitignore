@@ -3,10 +3,9 @@ dbt/dbt_packages/
 dbt/target
 dbt/package-lock.yml
 dbt/.user.yml
+dbt/logs
+data/
 *.env
-*.csv
-*.parquet
 *.tmp
-*.log
 kaggle.json
 __pycache__/
