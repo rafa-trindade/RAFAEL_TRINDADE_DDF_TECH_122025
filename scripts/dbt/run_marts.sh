@@ -5,7 +5,7 @@ echo "🚀 Iniciando dbt - MARTS (Analytics Layer)"
 
 PROJECT_ROOT="/home/rafael/app/RAFAEL_TRINDADE_DDF_TECH_122025"
 DBT_DIR="$PROJECT_ROOT/dbt"
-REPORTS_DIR="$PROJECT_ROOT/reports"
+REPORTS_DIR="$PROJECT_ROOT/reports/dbt/marts"
 
 mkdir -p "$REPORTS_DIR"
 

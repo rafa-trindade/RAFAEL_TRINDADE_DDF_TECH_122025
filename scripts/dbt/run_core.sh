@@ -5,7 +5,7 @@ echo "🚀 Iniciando dbt - CORE (Star Schema)"
 
 PROJECT_ROOT="/home/rafael/app/RAFAEL_TRINDADE_DDF_TECH_122025"
 DBT_DIR="$PROJECT_ROOT/dbt"
-REPORTS_DIR="$PROJECT_ROOT/reports"
+REPORTS_DIR="$PROJECT_ROOT/reports/dbt/core"
 
 mkdir -p "$REPORTS_DIR"
 
