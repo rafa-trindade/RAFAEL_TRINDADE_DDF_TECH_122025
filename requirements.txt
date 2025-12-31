@@ -10,3 +10,4 @@ sqlalchemy
 tabulate
 dbt-core
 dbt-postgres
+pandera
