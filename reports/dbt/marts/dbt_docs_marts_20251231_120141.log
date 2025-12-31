@@ -1,0 +1,8 @@
+[0m15:01:43  Running with dbt=1.11.2
+[0m15:01:43  Registered adapter: postgres=1.10.0
+[0m15:01:44  Found 15 models, 42 data tests, 2 seeds, 5 sources, 577 macros
+[0m15:01:44  
+[0m15:01:44  Concurrency: 1 threads (target='dev')
+[0m15:01:44  
+[0m15:01:44  Building catalog
+[0m15:01:45  Catalog written to /home/rafael/app/RAFAEL_TRINDADE_DDF_TECH_122025/dbt/target/catalog.json

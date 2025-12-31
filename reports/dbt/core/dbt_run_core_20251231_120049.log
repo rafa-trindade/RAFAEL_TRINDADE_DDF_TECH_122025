@@ -1,0 +1,20 @@
+[0m15:00:51  Running with dbt=1.11.2
+[0m15:00:51  Registered adapter: postgres=1.10.0
+[0m15:00:52  Found 15 models, 42 data tests, 2 seeds, 5 sources, 577 macros
+[0m15:00:52  
+[0m15:00:52  Concurrency: 1 threads (target='dev')
+[0m15:00:52  
+[0m15:00:52  1 of 4 START sql table model dw_core.dim_customers ............................. [RUN]
+[0m15:00:53  1 of 4 OK created sql table model dw_core.dim_customers ........................ [[32mSELECT 99441[0m in 0.54s]
+[0m15:00:53  2 of 4 START sql table model dw_core.dim_geolocation ........................... [RUN]
+[0m15:00:54  2 of 4 OK created sql table model dw_core.dim_geolocation ...................... [[32mSELECT 738332[0m in 1.91s]
+[0m15:00:54  3 of 4 START sql table model dw_core.dim_products .............................. [RUN]
+[0m15:00:55  3 of 4 OK created sql table model dw_core.dim_products ......................... [[32mSELECT 32951[0m in 0.14s]
+[0m15:00:55  4 of 4 START sql table model dw_core.fact_order_items .......................... [RUN]
+[0m15:00:56  4 of 4 OK created sql table model dw_core.fact_order_items ..................... [[32mSELECT 112650[0m in 1.53s]
+[0m15:00:56  
+[0m15:00:56  Finished running 4 table models in 0 hours 0 minutes and 4.35 seconds (4.35s).
+[0m15:00:56  
+[0m15:00:56  [32mCompleted successfully[0m
+[0m15:00:56  
+[0m15:00:56  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4

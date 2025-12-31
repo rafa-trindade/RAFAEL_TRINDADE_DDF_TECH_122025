@@ -1,0 +1,23 @@
+[0m15:00:10  Running with dbt=1.11.2
+[0m15:00:10  Registered adapter: postgres=1.10.0
+[0m15:00:10  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:00:13  Found 15 models, 42 data tests, 2 seeds, 5 sources, 577 macros
+[0m15:00:13  
+[0m15:00:13  Concurrency: 1 threads (target='dev')
+[0m15:00:13  
+[0m15:00:14  1 of 5 START sql view model dw_staging.stg_customers ........................... [RUN]
+[0m15:00:14  1 of 5 OK created sql view model dw_staging.stg_customers ...................... [[32mCREATE VIEW[0m in 0.13s]
+[0m15:00:14  2 of 5 START sql view model dw_staging.stg_geolocation ......................... [RUN]
+[0m15:00:14  2 of 5 OK created sql view model dw_staging.stg_geolocation .................... [[32mCREATE VIEW[0m in 0.04s]
+[0m15:00:14  3 of 5 START sql view model dw_staging.stg_order_items ......................... [RUN]
+[0m15:00:14  3 of 5 OK created sql view model dw_staging.stg_order_items .................... [[32mCREATE VIEW[0m in 0.05s]
+[0m15:00:14  4 of 5 START sql view model dw_staging.stg_orders .............................. [RUN]
+[0m15:00:14  4 of 5 OK created sql view model dw_staging.stg_orders ......................... [[32mCREATE VIEW[0m in 0.04s]
+[0m15:00:14  5 of 5 START sql view model dw_staging.stg_products ............................ [RUN]
+[0m15:00:14  5 of 5 OK created sql view model dw_staging.stg_products ....................... [[32mCREATE VIEW[0m in 0.05s]
+[0m15:00:14  
+[0m15:00:14  Finished running 5 view models in 0 hours 0 minutes and 0.57 seconds (0.57s).
+[0m15:00:14  
+[0m15:00:14  [32mCompleted successfully[0m
+[0m15:00:14  
+[0m15:00:14  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5

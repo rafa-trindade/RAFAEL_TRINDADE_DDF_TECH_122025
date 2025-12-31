@@ -1,0 +1,24 @@
+[0m15:01:31  Running with dbt=1.11.2
+[0m15:01:31  Registered adapter: postgres=1.10.0
+[0m15:01:32  Found 15 models, 42 data tests, 2 seeds, 5 sources, 577 macros
+[0m15:01:32  
+[0m15:01:32  Concurrency: 1 threads (target='dev')
+[0m15:01:32  
+[0m15:01:32  1 of 6 START sql table model dw_marts.mart_category_growth_monthly ............. [RUN]
+[0m15:01:33  1 of 6 OK created sql table model dw_marts.mart_category_growth_monthly ........ [[32mSELECT 1283[0m in 1.07s]
+[0m15:01:33  2 of 6 START sql table model dw_marts.mart_customer_behavior ................... [RUN]
+[0m15:01:34  2 of 6 OK created sql table model dw_marts.mart_customer_behavior .............. [[32mSELECT 98666[0m in 1.02s]
+[0m15:01:34  3 of 6 START sql table model dw_marts.mart_product_category_performance ........ [RUN]
+[0m15:01:35  3 of 6 OK created sql table model dw_marts.mart_product_category_performance ... [[32mSELECT 1283[0m in 0.72s]
+[0m15:01:35  4 of 6 START sql table model dw_marts.mart_sales_daily ......................... [RUN]
+[0m15:01:35  4 of 6 OK created sql table model dw_marts.mart_sales_daily .................... [[32mSELECT 616[0m in 0.28s]
+[0m15:01:35  5 of 6 START sql table model dw_marts.mart_sales_monthly ....................... [RUN]
+[0m15:01:35  5 of 6 OK created sql table model dw_marts.mart_sales_monthly .................. [[32mSELECT 24[0m in 0.08s]
+[0m15:01:35  6 of 6 START sql table model dw_marts.mart_sales_weekda ........................ [RUN]
+[0m15:01:36  6 of 6 OK created sql table model dw_marts.mart_sales_weekda ................... [[32mSELECT 7[0m in 0.40s]
+[0m15:01:36  
+[0m15:01:36  Finished running 6 table models in 0 hours 0 minutes and 3.83 seconds (3.83s).
+[0m15:01:36  
+[0m15:01:36  [32mCompleted successfully[0m
+[0m15:01:36  
+[0m15:01:36  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6

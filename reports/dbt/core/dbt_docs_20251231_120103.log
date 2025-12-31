@@ -1,0 +1,13 @@
+[0m15:01:05  Running with dbt=1.11.2
+[0m15:01:05  Registered adapter: postgres=1.10.0
+[0m15:01:05  Found 15 models, 42 data tests, 2 seeds, 5 sources, 577 macros
+[0m15:01:05  
+[0m15:01:05  Concurrency: 1 threads (target='dev')
+[0m15:01:05  
+[0m15:01:06  Building catalog
+[0m15:01:06  Encountered an error while generating catalog: Database Error
+  connection to server at "54.39.98.107", port 5432 failed: FATAL:  the database system is not yet accepting connections
+  DETAIL:  Consistent recovery state has not been yet reached.
+  
+[0m15:01:06  dbt encountered 1 failure while writing the catalog
+[0m15:01:06  Catalog written to /home/rafael/app/RAFAEL_TRINDADE_DDF_TECH_122025/dbt/target/catalog.json
