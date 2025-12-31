@@ -2,11 +2,11 @@
 
 Este documento descreve a **arquitetura técnica do projeto em execução**,
 detalhando como os componentes se integram para viabilizar os processos de
-ingestão, transformação e armazenamento de dados.
+ingestão, transformação e armazenamento de dados. 
 
 ## 🛠️ Arquitetura Local
 
-![Arquitetura Local](arquitetura_proposta.png)
+![Arquitetura Local](arquitetura_prop.png)
 
 | Componente          | Papel na Arquitetura                              | Responsabilidades Técnicas                                                                                           | Diferencial Estratégico                                                                         |
 | :------------------ | :------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- |
