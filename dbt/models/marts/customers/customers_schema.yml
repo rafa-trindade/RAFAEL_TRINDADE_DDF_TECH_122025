@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: mart_customer_behavior
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: ltv
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"

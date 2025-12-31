@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mart_sales_daily
+    description: Métricas diárias de vendas
+    columns:
+      - name: data
+        tests: [not_null, unique]
+
+      - name: receita_diaria
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
+
+  - name: mart_sales_monthly
+    description: Métricas mensais de vendas com crescimento MoM
+    columns:
+      - name: ano
+        tests: [not_null]
+
+      - name: mes
+        tests: [not_null]
+
+      - name: receita_mensal
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"
