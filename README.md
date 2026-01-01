@@ -1,7 +1,9 @@
 # RAFAEL TRINDADE - DDF_TECH_122025
 
-**Portfólio:** [https://rafa-trindade.github.io/](https://rafa-trindade.github.io/)<br>
-**LinkedIn:** [https://www.linkedin.com/in/rafatrindade/](https://www.linkedin.com/in/rafatrindade/)
+
+> **Portfólio:** [https://rafa-trindade.github.io/](https://rafa-trindade.github.io/)<br>
+> **LinkedIn:** [https://www.linkedin.com/in/rafatrindade/](https://www.linkedin.com/in/rafatrindade/)
+
 
 ## 📌 Introdução
 Este repositório contém a resolução do Case Técnico para a posição Engenheiro de Dados Júnior na **Dadosfera**. O projeto foca em uma empresa de E-commerce, utilizando o dataset brasileiro da Olist (Kaggle) para construir uma plataforma de dados ponta a ponta, integrando engenharia moderna, modelagem dimensional e visualiação de dados.
