@@ -292,24 +292,22 @@ A ingestão foi dividida em etapas claras:
 
 ![dw](docs/images/dw.png)
 
-**Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)**
-
-- Organização incremental
-- Padronização de schemas
-- Preparação para consumo por modelos de ML
-
 **Carga e catalogação dos dados utilizando o módulo de Coleta da Dadosfera.**
 
 - Módulo de Coleta da Dadosfera
 - Execução a partir de VPS dedicada
 - PostgreSQL em container com SSL habilitado
 
-A **carga** foi realizada a partir de uma VPS dedicada, configurada para permitir integração segura com a plataforma.
-
-A **catalogação dos dados** foi realizada diretamente na plataforma Dadosfera, onde os ativos ingeridos foram registrados, descritos e organizados, possibilitando sua exploração, governança e reutilização.
-
 👉 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
 👉 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
+
+![dadosfera](docs/images/dadosfera.png)
+
+**Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)**
+
+- Organização incremental
+- Padronização de schemas
+- Preparação para consumo por modelos de ML
 
 
 ## Item 4 - Data Quality
