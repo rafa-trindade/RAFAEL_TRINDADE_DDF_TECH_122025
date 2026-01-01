@@ -566,19 +566,15 @@ Os detalhes técnicos dessa configuração encontram-se documentados no guia esp
 
 ## Item 9 - Data App (Streamlit)
 
-Desenvolvimento de um Data App utilizando o Streamlit.
-
-👉 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
-
-
-![Streamlit](docs/images/streamlit.png)
-
 Desenvolvimento de um Data App interativo com Streamlit, implantado em uma VPS dedicada.
 
 O aplicativo disponibiliza visualizações analíticas das marts construídas, permitindo o acompanhamento centralizado de indicadores de negócio.
 
 A aplicação foi configurada para execução contínua no servidor, com acesso público via navegador.
 
+👉 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
+
+![Streamlit](docs/images/streamlit.png)
 
 ---
 
