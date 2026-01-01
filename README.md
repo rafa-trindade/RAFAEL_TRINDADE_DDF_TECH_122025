@@ -142,7 +142,7 @@ Esta seção apresenta a análise de riscos, estimativa de custos e alocação d
 
 | ID | Risco | Fase Impactada | P | I | Nível | Estratégia de Mitigação |
 |----|------|----------------|---|---|--------|--------------------------|
-| R1 | Instabilidade ou indisponibilidade da fonte de dados | Integração | 2 | 3 | 6 (Alto) | Política de retensão e versionamento dos datasets e validação pré-ingestão |
+| R1 | Instabilidade ou indisponibilidade da fonte de dados | Integração | 2 | 3 | 6 (Alto) | Política de retenção e versionamento dos datasets e validação pré-ingestão |
 | R2 | Volume de dados superior à capacidade de memória | Processamento | 2 | 3 | 6 (Alto) | Uso de DuckDB com processamento columnar e leitura por chunks |
 | R3 | Dados inconsistentes ou ausentes | Qualidade | 3 | 2 | 6 (Alto) | Validações automatizadas com Pandera e regras de schema |
 | R4 | Falha no deploy do Data App | Data Apps | 1 | 3 | 3 (Médio) | Logging e execução controlada na VPS |
