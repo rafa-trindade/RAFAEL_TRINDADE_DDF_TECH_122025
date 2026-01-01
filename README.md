@@ -107,13 +107,131 @@ Utilizado como base para qualidade e observabilidade.
 
 ### Metodologia:
 
-O planejamento do projeto foi realizado com base nas boas práticas do PMBOK, garantindo governança e controle, combinado com metodologias ágeis, priorizando entregas incrementais e adaptação contínua.
+O planejamento do projeto foi estruturado com base nas boas práticas do **PMBOK**, garantindo governança, controle de escopo, riscos e custos, combinado com **metodologias ágeis**, priorizando entregas incrementais, adaptação contínua e geração rápida de valor ao negócio.
 
-### Gestão:
+Essa abordagem híbrida permitiu alinhar controle executivo e flexibilidade técnica ao longo de todo o ciclo de vida do projeto.
 
-Utilização de Quadro Kanban para gerenciamento do fluxo de trabalho, controle de tarefas, entregas técnicas e milestones do projeto.
+---
+
+### Gestão do Projeto:
+
+A gestão das atividades foi realizada por meio de um **Quadro Kanban**, utilizado para organizar o fluxo de trabalho desde a concepção até a implementação final.
+
+O Kanban possibilitou:
+- Controle visual das tarefas planejadas e em execução  
+- Acompanhamento das **entregas técnicas**  
+- Definição e monitoramento de **milestones do projeto**  
+- Identificação de dependências e pontos críticos  
+
+O quadro foi implementado utilizando o **GitHub Projects**, integrando planejamento, execução e versionamento do código em um único ambiente.
 
 ![Quadro GitHub Projects](docs/images/project.png)
+
+### 📊 Matriz Formal de Riscos e Custos (PMBOK)
+
+Esta seção apresenta a análise de riscos, estimativa de custos e alocação de recursos do projeto, seguindo as boas práticas do PMBOK, aplicadas a um contexto ágil e incremental.
+
+---
+
+### 1️⃣ Matriz de Riscos do Projeto:
+
+**Escala adotada:**
+- **Probabilidade (P):** Baixa (1) | Média (2) | Alta (3)  
+- **Impacto (I):** Baixo (1) | Médio (2) | Alto (3)  
+- **Nível de Risco:** P × I  
+
+| ID | Risco | Fase Impactada | P | I | Nível | Estratégia de Mitigação |
+|----|------|----------------|---|---|--------|--------------------------|
+| R1 | Instabilidade ou indisponibilidade da fonte de dados | Integração | 2 | 3 | 6 (Alto) | Política de retensão e versionamento dos datasets e validação pré-ingestão |
+| R2 | Volume de dados superior à capacidade de memória | Processamento | 2 | 3 | 6 (Alto) | Uso de DuckDB com processamento columnar e leitura por chunks |
+| R3 | Dados inconsistentes ou ausentes | Qualidade | 3 | 2 | 6 (Alto) | Validações automatizadas com Pandera e regras de schema |
+| R4 | Falha no deploy do Data App | Data Apps | 1 | 3 | 3 (Médio) | Logging e execução controlada na VPS |
+| R5 | Mudança de escopo durante o desenvolvimento | Planejamento | 1 | 2 | 2 (Baixo) | Arquitetura modular e versionamento via Git |
+| R6 | Dependência excessiva de ferramentas específicas | Arquitetura | 1 | 2 | 2 (Baixo) | Uso de padrões abertos e stack desacoplada |
+
+> A gestão de riscos foi realizada de forma preventiva, com identificação, análise qualitativa e definição de estratégias de mitigação.
+
+---
+
+### 2️⃣ Estimativa de Custos do Projeto:
+
+#### Premissas
+- Projeto no formato **Proof of Concept (PoC)**
+- Execução em ambiente cloud leve
+- Uso predominante de ferramentas open source
+- Desenvolvimento realizado por um único Engenheiro de Dados
+
+---
+
+#### 💰 Custos de Infraestrutura
+
+| Recurso | Tipo | Custo Mensal Estimado |
+|------|------|------------------------|
+| VPS (6 vCPU / 12GB RAM / 100 GB) | Cloud | R$ 80 |
+| **Total Infraestrutura** |  | **R$ 80 / mês** |
+
+---
+
+#### 👨‍💻 Custos de Recursos Humanos
+
+| Papel | Alocação | Horas Estimadas | Custo Estimado |
+|----|----------|-----------------|----------------|
+| Engenheiro de Dados | 100% | 120h | R$ 8.000 |
+
+---
+
+#### 🧰 Custos de Ferramentas
+
+| Ferramenta | Tipo | Custo |
+|----------|------|-------|
+| PostgreSQL | Open Source | R$ 0 |
+| DuckDB | Open Source | R$ 0 |
+| dbt Core | Open Source | R$ 0 |
+| Pandera | Open Source | R$ 0 |
+| Streamlit | Open Source | R$ 0 |
+| Dadosfera | Ambiente de Avaliação | R$ 0 |
+
+---
+
+#### 💵 Custo Total Estimado
+
+| Categoria | Valor |
+|----------|-------|
+| Infraestrutura (1 mês) | R$ 80 |
+| Recursos Humanos | R$ 8.000 |
+| **Total Geral** | **R$ 8.080** |
+
+---
+
+### 3️⃣ Justificativa da Decisão Arquitetural:
+
+Para o porte do projeto, volume de dados e objetivo de entrega rápida de valor, **DuckDB** foi escolhido por oferecer:
+
+- Alta performance analítica em ambientes single-node
+- Baixo custo operacional
+- Simplicidade de setup e manutenção
+- Integração nativa com Python e dbt
+
+Ferramentas distribuídas como **Spark ou Snowpark** não foram adotadas por aumentarem a complexidade e o custo operacional sem ganhos proporcionais para este cenário.
+
+---
+
+### 4️⃣ Alocação de Recursos por Fase:
+
+| Fase do Projeto | Percentual de Esforço |
+|-----------------|-----------------------|
+| Planejamento e Arquitetura | 15% |
+| Integração de Dados | 20% |
+| Modelagem e Transformações | 25% |
+| Qualidade de Dados | 15% |
+| Análises e Visualização | 15% |
+| Data App e Deploy | 10% |
+
+---
+
+### 5️⃣ Conclusão:
+
+O projeto foi planejado e executado com base nas boas práticas do **PMBOK**, garantindo controle de riscos, previsibilidade de custos e alocação eficiente de recursos, aliado a uma execução ágil, incremental e orientada à entrega de valor.
 
 
 ## Item 1 - Base de Dados
