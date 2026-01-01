@@ -156,7 +156,7 @@ Esta seção apresenta a análise de riscos, estimativa de custos e alocação d
 ### 2️⃣ Estimativa de Custos do Projeto:
 
 #### Premissas
-- Projeto no formato **Proof of Concept (PoC)**
+- Projeto no formato **Prova de Conceito (PoC)**
 - Execução em ambiente cloud leve
 - Uso predominante de ferramentas open source
 - Desenvolvimento realizado por um único Engenheiro de Dados
@@ -220,7 +220,7 @@ No contexto de **Qualidade de Dados**, a biblioteca **Pandera** foi adotada em s
 
 - Definição de regras de qualidade diretamente em código Python, facilitando versionamento e manutenção
 - Integração natural com pipelines existentes e ambientes de processamento leve
-- Menor overhead operacional para um projeto no formato *Proof of Concept (PoC)*
+- Menor overhead operacional para um projeto no formato *Prova de Conceito (PoC)*
 
 A escolha do Pandera permitiu implementar validações robustas e reproduzíveis, mantendo a solução simples, eficiente e alinhada ao objetivo de entrega rápida de valor, sem comprometer a governança da qualidade dos dados.
 
