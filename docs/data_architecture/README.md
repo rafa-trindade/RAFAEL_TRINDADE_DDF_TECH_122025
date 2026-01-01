@@ -15,7 +15,6 @@ A solução segue padrões modernos de **Lakehouse + Data Warehouse Analítico**
 O fluxo de dados inicia-se na ingestão de arquivos CSV do **dataset Olist (Kaggle)**, executada em uma **VPS**, onde os dados são armazenados no **Data Lake (MinIO)** na camada *Landing*.  
 Os dados passam por etapas de **carga com DuckDB**, modelagem analítica com **dbt no PostgreSQL**, validações de qualidade e são consumidos por ferramentas de **visualização, catálogo e aplicações analíticas**, todas executadas em ambiente **local containerizado dentro da VPS**.
 
-
 ---
 
 ## 🧱 Componentes da Arquitetura
