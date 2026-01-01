@@ -205,14 +205,24 @@ Esta seção apresenta a análise de riscos, estimativa de custos e alocação d
 
 ### 3️⃣ Justificativa da Decisão Arquitetural:
 
-Para o porte do projeto, volume de dados e objetivo de entrega rápida de valor, **DuckDB** foi escolhido por oferecer:
+Para o porte do projeto, volume de dados e objetivo de entrega rápida de valor, o **DuckDB** foi escolhido por oferecer:
 
-- Alta performance analítica em ambientes single-node
+- Alta performance analítica em ambientes *single-node*
 - Baixo custo operacional
 - Simplicidade de setup e manutenção
 - Integração nativa com Python e dbt
 
-Ferramentas distribuídas como **Spark ou Snowpark** não foram adotadas por aumentarem a complexidade e o custo operacional sem ganhos proporcionais para este cenário.
+Ferramentas distribuídas como **Spark ou Snowpark** não foram adotadas por aumentarem a complexidade e o custo operacional sem ganhos proporcionais para este cenário, uma vez que o volume de dados e o padrão de acesso não justificam processamento distribuído.
+
+---
+
+No contexto de **Qualidade de Dados**, a biblioteca **Pandera** foi adotada em substituição a ferramentas como **Great Expectations** ou **Soda**, pelos seguintes motivos:
+
+- Definição de regras de qualidade diretamente em código Python, facilitando versionamento e manutenção
+- Integração natural com pipelines existentes e ambientes de processamento leve
+- Menor overhead operacional para um projeto no formato *Proof of Concept (PoC)*
+
+A escolha do Pandera permitiu implementar validações robustas e reproduzíveis, mantendo a solução simples, eficiente e alinhada ao objetivo de entrega rápida de valor, sem comprometer a governança da qualidade dos dados.
 
 ---
 
