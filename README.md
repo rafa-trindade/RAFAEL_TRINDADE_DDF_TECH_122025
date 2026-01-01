@@ -30,52 +30,50 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 
 ### 📚 Mapeamento da Documentação
 
-### 🏗️ Data Architecture
-📁 [`docs/data_architecture/`](docs/data_architecture/)
+---
 
-Descreve a arquitetura técnica do projeto em execução:
-- Componentes da stack (MinIO, PostgreSQL, DuckDB, Pandera, Docker)
+### 🏗️ Data Architecture
+📁 [`docs/data_architecture/`](docs/data_architecture/README.md)
+
+Descreve a arquitetura técnica da **Prova de Conceito (PoC)** em execução:
+- Visão geral da arquitetura **Lakehouse + Data Warehouse Analítico**
+- Componentes da stack (Kaggle API, Python, MinIO, DuckDB, PostgreSQL, dbt, Pandera, Docker)
 - Papéis e responsabilidades de cada serviço
-- Integração entre ingestão, processamento e armazenamento
+- Integração entre ingestão, carga, modelagem analítica e consumo
+- Execução do ambiente em **VPS**, priorizando simplicidade e portabilidade
 
 ---
 
 ### 🏛️ Data Governance
-📁 [`docs/data_governance/`](docs/data_governance/)
+📁 [`docs/data_governance/`](docs/data_governance/README.md)
 
 Centraliza as políticas e diretrizes do projeto e mapeia como a solução atende,
-na prática, aos pilares de **Data Governance**.
+na prática, aos pilares de **Data Governance**:
 - Política de retenção baseada em execuções técnicas (`run_id`)
-- Definição de contratos gerais de qualidade de dados
+- Definição de contratos gerais de dados
 - Estratégias seguras de reprocessamento e rollback
-- Suporte nativo à auditoria, observabilidade e controle de custos
 - Governança aplicada via código e automação
+- Suporte nativo à auditoria, observabilidade e controle operacional
 
 ---
 
 ### 🧬 Data Lineage
-📁 [`docs/data_lineage/`](docs/data_lineage/)
+📁 [`docs/data_lineage/`](docs/data_lineage/README.md)
 
 Documenta a rastreabilidade ponta a ponta dos dados:
-- Origem dos dados
-- Transformações por camada (Landing → Raw → Staging → Core → Marts → Dadosfera)
-
----
-
-### 🧱 Data Modeling
-📁 [`docs/data_modeling/`](docs/data_modeling/)
-
-- Documenta as decisões de modelagem de dados adotadas no projeto:
-- Modelagem OLTP dos dados de origem
-- Modelagem OLAP orientada a analytics
-- Diagramas e imagens das estruturas de dados
+- Origem dos dados (Kaggle → Data Lake)
+- Fluxo técnico entre camadas:
+  - Landing (MinIO)
+  - Data Warehouse: Raw → Staging → Core → Marts
+- Separação explícita entre transformações técnicas e semânticas
+- Base para auditoria, impacto de mudanças e governança analítica
 
 ---
 
 ### 🔍 Data Observability
-📁 [`docs/data_observability/`](docs/data_observability/)
+📁 [`docs/data_observability/`](docs/data_observability/README.md)
 
-Mapeia como o projeto atende aos pilares de Data Observability:
+Mapeia como o projeto atende aos pilares clássicos de **Data Observability**:
 - Freshness
 - Volume
 - Schema
@@ -84,20 +82,46 @@ Mapeia como o projeto atende aos pilares de Data Observability:
 - Quality
 - Reliability e Reprocessamento
 
-A observabilidade emerge como resultado das decisões de arquitetura e governança.
+A observabilidade emerge como **resultado natural das decisões de arquitetura,
+governança e qualidade de dados**, sem dependência de ferramentas externas.
 
 ---
 
 ### 📊 Data Profiling
-📁 [`docs/data_profiling/`](docs/data_profiling/)
+📁 [`docs/data_profiling/landing_*`](docs/data_profiling/landing/)
 
-Apresenta análises exploratórias e estatísticas dos dados:
-- Volume por camada
+Apresenta análises exploratórias e estatísticas dos dados na camada **Landing**,
+com **um relatório de profiling por dataset**:
+- Volumetria
 - Cardinalidade
 - Distribuição de valores
 - Percentual de nulos
 
-Utilizado como base para qualidade e observabilidade.
+Utilizado como base para **Data Quality**, **Data Observability** e definição de contratos de dados.
+
+---
+
+### 🧱 Infraestrutura e Execução
+📁 [`docs/infraestrutura_*`](docs/infraestrutura)
+
+Documenta as configurações técnicas e operacionais do ambiente de execução,
+distribuídas em múltiplos guias técnicos:
+- PostgreSQL com SSL/TLS em VPS (Docker)
+- Execução, dependências e orquestração do dbt (staging, core e marts)
+
+---
+
+### ✅ Data Quality
+📁 [`docs/data_quality/`](docs/data_quality/README.md)
+
+Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
+- Validação de **schema e estrutura antes da persistência na camada Landing** com **Pandera**
+- Contratos de dados explícitos por dataset
+- Logs técnicos auditáveis por execução (`run_id`)
+- Testes de integridade, unicidade e regras de negócio com **dbt tests**
+- Separação clara entre:
+  - Qualidade técnica (ingestão)
+  - Qualidade semântica e analítica (Data Warehouse)
 
 ---
 
@@ -298,6 +322,12 @@ A ingestão foi dividida em etapas claras:
 - Execução a partir de VPS dedicada
 - PostgreSQL em container com SSL habilitado
 
+### 🔗 Documentação Técnica Relacionada
+> - Arquitetura de ingestão e processamento: [`docs/data_architecture/`](docs/data_architecture/README.md)
+> - Lineage completo dos dados: [`docs/data_lineage/`](docs/data_lineage/README.md)
+> - Profiling da camada Landing: [`docs/data_profiling/`](docs/data_profiling/landing)
+
+
 👉 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
 👉 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
 
@@ -328,6 +358,11 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 📁 [`reports/dbt/core/`](reports/dbt/core/)<br>
 📁 [`reports/dbt/marts/`](reports/dbt/marts/)
 
+### 🔗 Documentação Técnica Relacionada
+> O detalhamento das regras de qualidade, contratos de schema,
+> validações por camada e evidências de execução está documentado em:
+> 📁 [`docs/data_quality/`](docs/data_quality/README.md)
+
 
 ## Item 6 - Modelagem de Dados
 
@@ -354,6 +389,11 @@ Otimização para consultas analíticas e performance no BI.
 - `dim_geolocation`
 - `dim_date` *(dbt_seed)*
 - `dim_time` *(dbt_seed)*
+
+### 🔗 Documentação Técnica Relacionada
+> A rastreabilidade das transformações e a relação entre os modelos
+> estão documentadas em:
+> 📁 [`docs/data_lineage/`](docs/data_lineage/README.md)
 
 ### `modelo_olap`
 
@@ -414,6 +454,12 @@ Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visua
    Análise da dinâmica de crescimento percentual por categoria ao longo do tempo, utilizando cores divergentes para facilitar a comparação visual entre períodos e categorias.
 
 Cada visualização teve sua **query SQL salva** e o **print do resultado** anexado a este documento como evidência da execução.
+
+### 🔗 Documentação Técnica Relacionada
+> A preparação dos dados consumidos nas visualizações
+> encontra-se documentada na arquitetura e lineage:
+> - [`docs/data_architecture/`](docs/data_architecture/README.md)
+> - [`docs/data_lineage/`](docs/data_lineage/README.md)
 
 ---
 
@@ -560,7 +606,14 @@ Essa configuração garantiu:
 - Segurança no processo de ingestão e processamento dos dados
 - Estabilidade e confiabilidade para execução dos pipelines
 
-Os detalhes técnicos dessa configuração encontram-se documentados no guia específico de configuração do PostgreSQL com SSL, disponível em [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md)
+### 🔗 Documentação Técnica Relacionada
+> A organização dos pipelines, estratégia de versionamento,
+> retenção por `run_id` e reprocessamento estão documentadas em:
+> - [`docs/data_architecture/`](docs/data_architecture/README.md)
+> - [`docs/data_governance/`](docs/data_governance/README.md)
+>
+> **Infraestrutura**
+> - [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md)
 
 ---
 
