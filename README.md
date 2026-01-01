@@ -20,15 +20,15 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 - **Data Warehouse:** PostgreSQL (Docker)
 - **Transformações:** dbt
 - **Qualidade de Dados:** Pandera + dbt tests
-- **Analytics & BI:** Dadosfera + Metabase
-- **Data Apps:** Streamlit
+- **Visualizações e Catálogo de Dados:** Dadosfera + Metabase
+- **Data App Analítico:** Streamlit
 
 ---
 
 ## 📚 Mapeamento da Documentação
 
 ### 🏗️ Data Architecture
-📁 `docs/data_architecture/`
+📁 [`docs/data_architecture/`](docs/data_architecture/)
 
 Descreve a arquitetura técnica do projeto em execução:
 - Componentes da stack (MinIO, PostgreSQL, DuckDB, Pandera, Docker)
@@ -230,23 +230,209 @@ Modelagem dimensional seguindo os princípios de Ralph Kimball.
 ---
 
 ## Item 7 - Analisar (Visualização)
-Dashboard interativo construído na Dadosfera (Metabase).
-* **Análises:** 
-* **Query SQL:** [LINK PARA O ARQUIVO SQL DE CONSULTA]
+
+### Acesso ao módulo de Visualização
+
+Foi utilizado o módulo **Visualização** da Dadosfera, acessado com as **mesmas credenciais do ambiente**, onde os datasets são identificados por meio de um **ID técnico da tabela**.
+
+Exemplo de identificação do dataset na Dadosfera:
+- **Database:** `DADOSFERA_PRD_TREINAMENTOS`
+- **Schema:** `PUBLIC`
+- **Tabela (ID):** `TB__9C6HQS__DW_MARTS__MART_*`
+
+---
+
+### Organização
+
+Foi criada uma **Coleção** no Metabase seguindo o padrão solicitado:
+
+```text
+Rafael Trindade - 122025
+```
+
+Dentro dessa coleção foram salvas todas as **queries SQL** e **visualizações** desenvolvidas neste item.
+
+---
+
+### Visualizações Criadas
+Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visualização**, conforme solicitado:
+
+1. **Top 15 Categorias por Receita**  
+   Tipo: Gráfico de Barras  
+   Análise do mix de produtos e concentração de receita.
+
+2. **Receita Mensal ao Longo do Tempo**  
+   Tipo: Gráfico de Linha  
+   Análise de tendência e sazonalidade mensal.
+
+3. **Receita Diária ao Longo do Tempo**  
+   Tipo: Gráfico de Linha (série temporal diária)  
+   Identificação de picos, quedas e variações diárias.
+
+4. **Receita por Dia da Semana**  
+   Tipo: Gráfico de Barras  
+   Análise de padrões de consumo ao longo da semana.
+
+5. **Crescimento Mensal (%) por Categoria de Produto**  
+   Tipo: Tabela Analítica com Formatação Condicional (Heatmap Analítico)  
+   Análise da dinâmica de crescimento percentual por categoria ao longo do tempo, utilizando cores divergentes para facilitar a comparação visual entre períodos e categorias.
+
+Cada visualização teve sua **query SQL salva** e o **print do resultado** anexado a este documento como evidência da execução.
+
+---
+
+### 🔗 Acesso ao Dashboard
+
+O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
+
+👉 [[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]
+
+---
+
+### 📊 Visualizações e Análises Criadas
+
+A seguir estão as visualizações desenvolvidas no módulo de **Visualização da Dadosfera**, com foco em análise de categorias e séries temporais, utilizando os dados do Data Mart.
+
+### 1️⃣ Top 15 Categorias por Receita Total
+
+**Pergunta:**  
+Quais são as categorias de produtos que mais geram receita no período analisado?
+
+**Descrição:**  
+Esta visualização identifica as categorias com maior contribuição de receita total, permitindo compreender onde está concentrado o faturamento do negócio.
+
+**Query SQL**
+```sql
+SELECT
+    PRODUCT_CATEGORY_NAME,
+    SUM(RECEITA_CATEGORIA) AS RECEITA_CATEGORIA
+FROM "DADOSFERA_PRD_TREINAMENTOS"."PUBLIC"."TB__9C6HQS__DW_MARTS__MART_PRODUCT_CATEGORY_PERFORMANCE"
+GROUP BY PRODUCT_CATEGORY_NAME
+ORDER BY RECEITA_CATEGORIA DESC
+LIMIT 15;
+```
+![Top 15 Categorias por Receita](docs/images/top_categorias_receita.png)
+
+---
+
+### 2️⃣ Receita Mensal ao Longo do Tempo
+
+**Pergunta:**  
+Como a receita evolui mês a mês ao longo do tempo?
+
+**Descrição:**  
+Análise de série temporal que mostra o comportamento da receita mensal, possibilitando identificar tendências, sazonalidades e padrões de crescimento.
+
+**Query SQL**
+```sql
+SELECT
+    TO_DATE(ANO || '-' || LPAD(MES, 2, '0') || '-01') AS PERIODO,
+    SUM(RECEITA_MENSAL) AS RECEITA_MENSAL
+FROM "DADOSFERA_PRD_TREINAMENTOS"."PUBLIC"."TB__9C6HQS__DW_MARTS__MART_SALES_MONTHLY"
+GROUP BY PERIODO
+ORDER BY PERIODO;
+```
+![Receita Mensal](docs/images/receita_mensal.png)
+
+---
+
+### 3️⃣ Receita Diária
+
+**Pergunta:**  
+Como a receita se comporta diariamente ao longo do período analisado?
+
+**Descrição:**  
+Visualização que detalha a variação diária da receita, útil para identificar picos, quedas pontuais e padrões operacionais no curto prazo.
+
+**Query SQL**
+```sql
+SELECT
+    DATA,
+    RECEITA_DIARIA
+FROM "DADOSFERA_PRD_TREINAMENTOS"."PUBLIC"."TB__9C6HQS__DW_MARTS__MART_SALES_DAILY"
+ORDER BY DATA;
+```
+![Receita Diária](docs/images/receita_diaria.png)
+
+---
+
+### 4️⃣ Receita por Dia da Semana
+
+**Pergunta:**  
+Quais dias da semana concentram maior volume de receita?
+
+**Descrição:**  
+Análise agregada por dia da semana, permitindo identificar comportamentos de consumo recorrentes e apoiar decisões operacionais e comerciais.
+
+**Query SQL**
+```sql
+SELECT
+    NOME_DIA_SEMANA,
+    RECEITA_TOTAL,
+    CASE NOME_DIA_SEMANA
+        WHEN 'Segunda-feira' THEN 1
+        WHEN 'Terça-feira'   THEN 2
+        WHEN 'Quarta-feira'  THEN 3
+        WHEN 'Quinta-feira'  THEN 4
+        WHEN 'Sexta-feira'   THEN 5
+        WHEN 'Sábado'        THEN 6
+        WHEN 'Domingo'       THEN 7
+    END AS ORDEM_DIA
+FROM "DADOSFERA_PRD_TREINAMENTOS"."PUBLIC"."TB__9C6HQS__DW_MARTS__MART_SALES_WEEKDA"
+ORDER BY ORDEM_DIA;
+
+```
+![Receita por Dia da Semana](docs/images/receita_dia_semana.png)
+
+---
+
+### 5️⃣ Crescimento Percentual Mensal por Categoria
+
+**Pergunta:**  
+Quais categorias apresentam crescimento de percentual ao longo do tempo?
+
+**Descrição:**  
+Tabela analítica com formatação condicional que representa visualmente o crescimento percentual mensal das categorias ao longo do tempo, permitindo rápida identificação de variações positivas e negativas entre períodos e categorias.
+
+**Query SQL**
+```sql
+SELECT
+    PRODUCT_CATEGORY_NAME,
+    ANO,
+    MES,
+    CRESCIMENTO_PERCENTUAL
+FROM "DADOSFERA_PRD_TREINAMENTOS"."PUBLIC"."TB__9C6HQS__DW_MARTS__MART_CATEGORY_GROWTH_MONTHLY"
+WHERE CRESCIMENTO_PERCENTUAL IS NOT NULL
+ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
+```
+![Crescimento Mensal por Categoria](docs/images/crescimento_categoria.png)
 
 ---
 
 ## Item 8 - Pipelines
 
-Pipeline de processamento automatizado utilizando os Steps da Dadosfera.
-
 **Status:** [[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]
+
+### Considerações Técnicas
+
+Para viabilizar a integração segura entre a infraestrutura de dados e a plataforma da Dadosfera, foi necessária a configuração de um **banco PostgreSQL em container Docker com SSL/TLS habilitado**, executando em uma **VPS dedicada**.
+
+Essa configuração garantiu:
+- Comunicação criptografada entre a Dadosfera e o banco de dados
+- Segurança no processo de ingestão e processamento dos dados
+- Estabilidade e confiabilidade para execução dos pipelines
+
+Os detalhes técnicos dessa configuração encontram-se documentados no guia específico de configuração do PostgreSQL com SSL, disponível em [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md).
 
 ---
 
 ## Item 9 - Data App (Streamlit)
 Desenvolvimento de um Data App utilizando o Streamlit.
 * **URL do App:** [[STREAMLIT VPS](http://54.39.98.107:8501/)]
+
+Desenvolvimento de um Data App interativo com Streamlit, implantado em uma VPS dedicada.
+O aplicativo disponibiliza visualizações analíticas das marts construídas, permitindo o acompanhamento centralizado de indicadores de negócio.
+A aplicação foi configurada para execução contínua no servidor, com acesso público via navegador.
 
 
 ---
