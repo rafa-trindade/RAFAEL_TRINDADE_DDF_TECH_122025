@@ -13,8 +13,6 @@ Este repositório contém a resolução do Case Técnico para a posição Engenh
 ## 🛠️ Arquitetura Geral da Solução
 A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehouse Analítico**, combinando **MinIO**, **DuckDB**, **PostgreSQL**, **dbt**, **Pandera** e **Dadosfera**.
 
-![Arquitetura](docs/data_architecture/arquitetura_proposta.png)
-
 ### Principais componentes:
 
 - **Fonte de Dados:** Kaggle - Olist (CSV)
@@ -25,6 +23,8 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 - **Qualidade de Dados:** Pandera + dbt tests
 - **Visualizações e Catálogo de Dados:** Dadosfera + Metabase
 - **Data App Analítico:** Streamlit
+
+![Arquitetura](docs/data_architecture/arquitetura_proposta.png)
 
 ---
 
