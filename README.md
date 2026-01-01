@@ -33,7 +33,7 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 ---
 
 ### 🏗️ Data Architecture
-📁 [`docs/data_architecture/`](docs/data_architecture/README.md)
+📄 [`docs/data_architecture/`](docs/data_architecture/README.md)
 
 Descreve a arquitetura técnica da **Prova de Conceito (PoC)** em execução:
 - Visão geral da arquitetura **Lakehouse + Data Warehouse Analítico**
@@ -45,7 +45,7 @@ Descreve a arquitetura técnica da **Prova de Conceito (PoC)** em execução:
 ---
 
 ### 🏛️ Data Governance
-📁 [`docs/data_governance/`](docs/data_governance/README.md)
+📄 [`docs/data_governance/`](docs/data_governance/README.md)
 
 Centraliza as políticas e diretrizes do projeto e mapeia como a solução atende,
 na prática, aos pilares de **Data Governance**:
@@ -58,7 +58,7 @@ na prática, aos pilares de **Data Governance**:
 ---
 
 ### 🧬 Data Lineage
-📁 [`docs/data_lineage/`](docs/data_lineage/README.md)
+📄 [`docs/data_lineage/`](docs/data_lineage/README.md)
 
 Documenta a rastreabilidade ponta a ponta dos dados:
 - Origem dos dados (Kaggle → Data Lake)
@@ -71,7 +71,7 @@ Documenta a rastreabilidade ponta a ponta dos dados:
 ---
 
 ### 🔍 Data Observability
-📁 [`docs/data_observability/`](docs/data_observability/README.md)
+📄 [`docs/data_observability/`](docs/data_observability/README.md)
 
 Mapeia como o projeto atende aos pilares clássicos de **Data Observability**:
 - Freshness
@@ -102,7 +102,7 @@ Utilizado como base para **Data Quality**, **Data Observability** e definição 
 ---
 
 ### ✅ Data Quality
-📁 [`docs/data_quality/`](docs/data_quality/README.md)
+📄 [`docs/data_quality/`](docs/data_quality/README.md)
 
 Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
 - Validação de **schema e estrutura antes da persistência na camada Landing** com **Pandera**
@@ -324,9 +324,9 @@ A ingestão foi dividida em etapas claras:
 - PostgreSQL em container com SSL habilitado
 
 ### 🔗 Documentação Técnica Relacionada
-> - Arquitetura de ingestão e processamento: [`docs/data_architecture/`](docs/data_architecture/README.md)
-> - Lineage completo dos dados: [`docs/data_lineage/`](docs/data_lineage/README.md)
-> - Profiling da camada Landing: [`docs/data_profiling/`](docs/data_profiling/landing)
+> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
+> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
+> 📁 Profiles da camada Landing: [`data_profiling/`](docs/data_profiling/landing)
 
 
 👉 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
@@ -354,15 +354,13 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 ### Entregável:
 
-📁 [`reports/pandera/landing/`](reports/pandera/landing/)<br>
-📁 [`reports/dbt/staging/`](reports/dbt/staging/)<br>
-📁 [`reports/dbt/core/`](reports/dbt/core/)<br>
+📁 [`reports/pandera/landing/`](reports/pandera/landing/)  
+📁 [`reports/dbt/staging/`](reports/dbt/staging/)  
+📁 [`reports/dbt/core/`](reports/dbt/core/)  
 📁 [`reports/dbt/marts/`](reports/dbt/marts/)
 
 ### 🔗 Documentação Técnica Relacionada
-> O detalhamento das regras de qualidade, contratos de schema,
-> validações por camada e evidências de execução está documentado em:
-> 📁 [`docs/data_quality/`](docs/data_quality/README.md)
+> 📄 Detalhamento das regras de qualidade: [`data_quality.md`](docs/data_quality/README.md)
 
 
 ## Item 6 - Modelagem de Dados
@@ -392,8 +390,7 @@ Otimização para consultas analíticas e performance no BI.
 - `dim_time` *(dbt_seed)*
 
 ### 🔗 Documentação Técnica Relacionada
-> A rastreabilidade das transformações estão documentadas em:
-> 📁 [`docs/data_lineage/`](docs/data_lineage/README.md)
+> 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
 
 ### `modelo_olap`
 
@@ -456,10 +453,8 @@ Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visua
 Cada visualização teve sua **query SQL salva** e o **print do resultado** anexado a este documento como evidência da execução.
 
 ### 🔗 Documentação Técnica Relacionada
-> A preparação dos dados consumidos nas visualizações
-> encontra-se documentada na arquitetura e lineage:
-> - [`docs/data_architecture/`](docs/data_architecture/README.md)
-> - [`docs/data_lineage/`](docs/data_lineage/README.md)
+> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
+> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)
 
 ---
 
@@ -607,13 +602,10 @@ Essa configuração garantiu:
 - Estabilidade e confiabilidade para execução dos pipelines
 
 ### 🔗 Documentação Técnica Relacionada
-> A organização dos pipelines, estratégia de versionamento,
-> retenção por `run_id` e reprocessamento estão documentadas em:
-> - [`docs/data_architecture/`](docs/data_architecture/README.md)
-> - [`docs/data_governance/`](docs/data_governance/README.md)
->
-> **Infraestrutura**
-> - [`docs/infraestrutura/postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
+> 📄 Arquitetura e organização dos pipelines: [`data_architecture.md`](docs/data_architecture/README.md)  
+> 📄 Estratégia de governança, versionamento e reprocessamento: [`data_governance.md`](docs/data_governance/README.md)  
+> 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
+
 
 ---
 
