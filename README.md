@@ -101,16 +101,6 @@ Utilizado como base para **Data Quality**, **Data Observability** e definição 
 
 ---
 
-### 🧱 Infraestrutura e Execução
-📁 [`docs/infraestrutura_*`](docs/infraestrutura)
-
-Documenta as configurações técnicas e operacionais do ambiente de execução,
-distribuídas em múltiplos guias técnicos:
-- PostgreSQL com SSL/TLS em VPS (Docker)
-- Execução, dependências e orquestração do dbt (staging, core e marts)
-
----
-
 ### ✅ Data Quality
 📁 [`docs/data_quality/`](docs/data_quality/README.md)
 
@@ -124,6 +114,17 @@ Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
   - Qualidade semântica e analítica (Data Warehouse)
 
 ---
+
+### 🧱 Infraestrutura e Execução
+📁 [`docs/infraestrutura_*`](docs/infraestrutura)
+
+Documenta as configurações técnicas e operacionais do ambiente de execução,
+distribuídas em múltiplos guias técnicos:
+- PostgreSQL com SSL/TLS em VPS (Docker)
+- Execução, dependências e orquestração do dbt (staging, core e marts)
+
+---
+
 
 # 📑 Itens do Case
 
@@ -391,8 +392,7 @@ Otimização para consultas analíticas e performance no BI.
 - `dim_time` *(dbt_seed)*
 
 ### 🔗 Documentação Técnica Relacionada
-> A rastreabilidade das transformações e a relação entre os modelos
-> estão documentadas em:
+> A rastreabilidade das transformações estão documentadas em:
 > 📁 [`docs/data_lineage/`](docs/data_lineage/README.md)
 
 ### `modelo_olap`
@@ -613,7 +613,7 @@ Essa configuração garantiu:
 > - [`docs/data_governance/`](docs/data_governance/README.md)
 >
 > **Infraestrutura**
-> - [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md)
+> - [`docs/infraestrutura/postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
 
 ---
 
