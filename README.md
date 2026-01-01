@@ -245,9 +245,9 @@ Pipeline de processamento automatizado utilizando os Steps da Dadosfera.
 ---
 
 ## Item 9 - Data App (Streamlit)
-Desenvolvimento de uma aplicação para exploração de insights.
-* **URL do App:** [LINK PARA O STREAMLIT CLOUD]
-* **Funcionalidade:**
+Desenvolvimento de um Data App utilizando o Streamlit.
+* **URL do App:** [[STREAMLIT VPS](http://54.39.98.107:8501/)]
+
 
 ---
 
