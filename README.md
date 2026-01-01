@@ -28,7 +28,7 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 
 ---
 
-## 📚 Mapeamento da Documentação
+### 📚 Mapeamento da Documentação
 
 ### 🏗️ Data Architecture
 📁 [`docs/data_architecture/`](docs/data_architecture/)
@@ -56,7 +56,6 @@ na prática, aos pilares de **Data Governance**.
 ### 🧬 Data Lineage
 📁 [`docs/data_lineage/`](docs/data_lineage/)
 
-
 Documenta a rastreabilidade ponta a ponta dos dados:
 - Origem dos dados
 - Transformações por camada (Landing → Raw → Staging → Core → Marts → Dadosfera)
@@ -65,7 +64,6 @@ Documenta a rastreabilidade ponta a ponta dos dados:
 
 ### 🧱 Data Modeling
 📁 [`docs/data_modeling/`](docs/data_modeling/)
-
 
 - Documenta as decisões de modelagem de dados adotadas no projeto:
 - Modelagem OLTP dos dados de origem
@@ -76,7 +74,6 @@ Documenta a rastreabilidade ponta a ponta dos dados:
 
 ### 🔍 Data Observability
 📁 [`docs/data_observability/`](docs/data_observability/)
-
 
 Mapeia como o projeto atende aos pilares de Data Observability:
 - Freshness
@@ -94,7 +91,6 @@ A observabilidade emerge como resultado das decisões de arquitetura e governan�
 ### 📊 Data Profiling
 📁 [`docs/data_profiling/`](docs/data_profiling/)
 
-
 Apresenta análises exploratórias e estatísticas dos dados:
 - Volume por camada
 - Cardinalidade
@@ -109,7 +105,7 @@ Utilizado como base para qualidade e observabilidade.
 
 ## Item 0 - Agilidade e Planejamento
 
-### Metodologia
+### Metodologia:
 
 O planejamento do projeto foi realizado seguindo boas práticas do PMBOK, combinado com metodologias ágeis.
 
@@ -137,7 +133,7 @@ O planejamento do projeto foi realizado seguindo boas práticas do PMBOK, combin
 
 ## Item 2 e 3 - Integrar e Explorar (Dadosfera)
 
-### Estratégia de Ingestão
+### Estratégia de Ingestão:
 
 A ingestão foi dividida em etapas claras:
 
@@ -178,20 +174,21 @@ A **catalogação dos dados** foi realizada diretamente na plataforma Dadosfera,
 
 ## Item 4 - Data Quality
 
-### Abordagem
+### Abordagem:
 
 A qualidade dos dados foi tratada desde o início do pipeline.
 
-### Ferramentas Utilizadas
+### Ferramentas Utilizadas:
 
 - **Pandera (Python)** - validação de schemas
 - **dbt tests** - testes analíticos
 
-### Entregável
+### Entregável:
 
-Geração de relatório de qualidade para identificação de nulos e tipos incorretos.
-
-**Resultado:** [[PANDERA REPORTS](https://github.com/rafa-trindade/RAFAEL_TRINDADE_DDF_TECH_122025/tree/main/reports/pandera)]  [[DBT REPORTS](https://github.com/rafa-trindade/RAFAEL_TRINDADE_DDF_TECH_122025/tree/main/reports/dbt)]
+📁 [`reports/pandera/landing/`](reports/pandera/landing/)<br>
+📁 [`reports/dbt/staging/`](reports/dbt/staging/)<br>
+📁 [`reports/dbt/core/`](reports/dbt/core/)<br>
+📁 [`reports/dbt/marts/`](reports/dbt/marts/)
 
 
 ## Item 6 - Modelagem de Dados
@@ -201,7 +198,7 @@ Modelagem dimensional seguindo os princípios de Ralph Kimball.
 **Esquema:** Star Schema (Tabelas Fato e Dimensão).<br>
 **Justificativa:** Otimização para consultas analíticas e performance no BI.
 
-### Estrutura Final
+### Estrutura Final:
 
 **Fato:**
 
@@ -227,7 +224,7 @@ Modelagem dimensional seguindo os princípios de Ralph Kimball.
 
 ## Item 7 - Analisar (Visualização)
 
-### Acesso ao módulo de Visualização
+### Acesso ao módulo de Visualização:
 
 Foi utilizado o módulo **Visualização** da Dadosfera, acessado com as **mesmas credenciais do ambiente**, onde os datasets são identificados por meio de um **ID técnico da tabela**.
 
@@ -238,7 +235,7 @@ Exemplo de identificação do dataset na Dadosfera:
 
 ---
 
-### Organização
+### Organização:
 
 Foi criada uma **Coleção** no Metabase seguindo o padrão solicitado:
 
@@ -250,7 +247,7 @@ Dentro dessa coleção foram salvas todas as **queries SQL** e **visualizações
 
 ---
 
-### Visualizações Criadas
+### Visualizações Criadas:
 Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visualização**, conforme solicitado:
 
 1. **Top 15 Categorias por Receita**  
@@ -277,7 +274,7 @@ Cada visualização teve sua **query SQL salva** e o **print do resultado** anex
 
 ---
 
-### 🔗 Acesso ao Dashboard
+### 🔗 Acesso ao Dashboard:
 
 O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
 
@@ -285,7 +282,7 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 
 ---
 
-### 📊 Visualizações e Análises Criadas
+### 📊 Visualizações e Análises Criadas:
 
 A seguir estão as visualizações desenvolvidas no módulo de **Visualização da Dadosfera**, com foco em análise de categorias e séries temporais, utilizando os dados do Data Mart.
 
@@ -409,7 +406,7 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 
 **Status:** [[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]
 
-### Considerações Técnicas
+### Considerações Técnicas:
 
 Para viabilizar a integração segura entre a infraestrutura de dados e a plataforma da Dadosfera, foi necessária a configuração de um **banco PostgreSQL em container Docker com SSL/TLS habilitado**, executando em uma **VPS dedicada**.
 
@@ -418,16 +415,19 @@ Essa configuração garantiu:
 - Segurança no processo de ingestão e processamento dos dados
 - Estabilidade e confiabilidade para execução dos pipelines
 
-Os detalhes técnicos dessa configuração encontram-se documentados no guia específico de configuração do PostgreSQL com SSL, disponível em [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md).
+Os detalhes técnicos dessa configuração encontram-se documentados no guia específico de configuração do PostgreSQL com SSL, disponível em [`docs/configuracoes/postgres_ssl_setup.md`](docs/configuracoes/postgres_ssl_setup.md)
 
 ---
 
 ## Item 9 - Data App (Streamlit)
+
 Desenvolvimento de um Data App utilizando o Streamlit.
 * **URL do App:** [[STREAMLIT VPS](http://54.39.98.107:8501/)]
 
 Desenvolvimento de um Data App interativo com Streamlit, implantado em uma VPS dedicada.
+
 O aplicativo disponibiliza visualizações analíticas das marts construídas, permitindo o acompanhamento centralizado de indicadores de negócio.
+
 A aplicação foi configurada para execução contínua no servidor, com acesso público via navegador.
 
 
