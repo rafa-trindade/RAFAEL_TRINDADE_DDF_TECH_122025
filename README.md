@@ -24,7 +24,7 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 - **Visualizações e Catálogo de Dados:** Dadosfera + Metabase
 - **Data App Analítico:** Streamlit
 
-![Arquitetura](docs/data_architecture/arquitetura_proposta.png)
+![Arquitetura](docs/images/arquitetura_proposta.png)
 
 ---
 
@@ -357,11 +357,11 @@ Otimização para consultas analíticas e performance no BI.
 
 ### `modelo_olap`
 
-![Modelagem](docs/data_modeling/olap.png)
+![Modelagem](docs/images/olap.png)
 
 ### origem: `modelo_oltp`
 
-![oltp](docs/data_modeling/oltp.png)
+![oltp](docs/images/oltp.png)
 
 ---
 
