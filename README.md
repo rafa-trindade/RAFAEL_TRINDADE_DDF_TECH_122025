@@ -107,9 +107,11 @@ Utilizado como base para qualidade e observabilidade.
 
 ### Metodologia:
 
-O planejamento do projeto foi realizado seguindo boas práticas do PMBOK, combinado com metodologias ágeis.
+O planejamento do projeto foi realizado com base nas boas práticas do PMBOK, garantindo governança e controle, combinado com metodologias ágeis, priorizando entregas incrementais e adaptação contínua.
 
-**Gestão:** Quadro Kanban para controle de tarefas, entregas técnicas e milestones do projeto.
+### Gestão:
+
+Utilização de Quadro Kanban para gerenciamento do fluxo de trabalho, controle de tarefas, entregas técnicas e milestones do projeto.
 
 ![Quadro GitHub Projects](docs/images/project.png)
 
