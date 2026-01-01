@@ -10,15 +10,15 @@ Este repositório contém a resolução do Case Técnico para a posição Engenh
 
 ---
 
-## 🛠️ Arquitetura Geral da Solução - *Proof of Concept (PoC)*
+## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
 A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehouse Analítico**, combinando **MinIO**, **DuckDB**, **PostgreSQL**, **dbt**, **Pandera** e **Dadosfera**.
 
 ### Principais componentes:
 
 - **Fonte de Dados:** Kaggle - Olist (CSV)
-- **Data Lake:** MinIO camada Landing (extra: Bronze, Silver, Gold) 
+- **Data Lake:** MinIO - *Camada Landing* (com organização em Bronze, Silver e Gold)
 - **Engine de Processamento:** DuckDB
-- **Data Warehouse:** PostgreSQL (Docker)
+- **Data Warehouse:** PostgreSQL (containerizado via Docker)
 - **Transformações:** dbt
 - **Qualidade de Dados:** Pandera + dbt tests
 - **Visualizações e Catálogo de Dados:** Dadosfera + Metabase
