@@ -423,6 +423,8 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 
 👉 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
 
+![Metabase](docs/images/metabase.png)
+
 ---
 
 ### 📊 Visualizações e Análises Criadas:
@@ -567,6 +569,9 @@ Os detalhes técnicos dessa configuração encontram-se documentados no guia esp
 Desenvolvimento de um Data App utilizando o Streamlit.
 
 👉 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
+
+
+![Streamlit](docs/images/streamlit.png)
 
 Desenvolvimento de um Data App interativo com Streamlit, implantado em uma VPS dedicada.
 
