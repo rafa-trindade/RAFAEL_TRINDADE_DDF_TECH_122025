@@ -279,6 +279,8 @@ A ingestão foi dividida em etapas claras:
 - Dados armazenados em formato parquet
 - Verificação de Qualidade com Pandera
 
+![Minio](docs/images/minio.png)
+
 **Carga Analítica no Data Warehouse**
 
 - PostgreSQL utilizado como Data Warehouse analítico
@@ -287,6 +289,8 @@ A ingestão foi dividida em etapas claras:
 - Aplicação de testes de qualidade (dbt tests)
 - Microtransformações simuladas no contexto analítico
 - Motor de processamento na camada de ingestão: DuckDB
+
+![dw](docs/images/dw.png)
 
 **Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)**
 
