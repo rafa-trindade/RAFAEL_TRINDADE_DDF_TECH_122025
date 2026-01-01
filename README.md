@@ -10,7 +10,7 @@ Este repositório contém a resolução do Case Técnico para a posição Engenh
 
 ---
 
-## 🛠️ Arquitetura Geral da Solução (*Proof of Concept (PoC)*)
+## 🛠️ Arquitetura Geral da Solução - *Proof of Concept (PoC)*
 A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehouse Analítico**, combinando **MinIO**, **DuckDB**, **PostgreSQL**, **dbt**, **Pandera** e **Dadosfera**.
 
 ### Principais componentes:
