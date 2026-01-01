@@ -117,15 +117,20 @@ Utilização de Quadro Kanban para gerenciamento do fluxo de trabalho, controle 
 
 
 ## Item 1 - Base de Dados
-**Dataset:** Brazilian E-Commerce Dataset by Olist (Kaggle).
 
-**Justificativa:** 
+### Dataset:
+
+Brazilian E-Commerce Dataset by Olist (Kaggle).
+
+### Justificativa:
+
 - Dataset real, amplamente utilizado em projetos analíticos
 - Domínio aderente ao cenário de e-commerce
 - Volume superior a 100.000 registros
 - Contém dados transacionais e descritivos
 
-**Principais tabelas:**
+### Principais tabelas:
+
 - `olist_orders_dataset`
 - `olist_order_items_dataset`
 - `olist_products_dataset`
@@ -198,8 +203,13 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 Modelagem dimensional seguindo os princípios de Ralph Kimball.
 
-**Esquema:** Star Schema (Tabelas Fato e Dimensão).<br>
-**Justificativa:** Otimização para consultas analíticas e performance no BI.
+### Esquema:
+ 
+ Star Schema (Tabelas Fato e Dimensão).
+
+### Justificativa:
+
+Otimização para consultas analíticas e performance no BI.
 
 ### Estrutura Final:
 
