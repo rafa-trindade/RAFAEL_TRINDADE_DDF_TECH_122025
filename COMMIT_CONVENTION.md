@@ -1,4 +1,4 @@
-## PADRÃO DE COMMITS – PROJETO SQUAD3
+## PADRÃO DE COMMITS -PROJETO SQUAD3
 
 Este projeto utiliza um padrão de commits inspirado em Conventional Commits,
 adaptado para engenharia de dados, pipelines, qualidade e performance.
