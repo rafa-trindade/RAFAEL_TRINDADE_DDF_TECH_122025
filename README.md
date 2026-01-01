@@ -38,7 +38,7 @@ Descreve a arquitetura técnica do projeto em execução:
 ---
 
 ### 🏛️ Data Governance
-📁 `docs/data_governance/`
+📁 [`docs/data_governance/`](docs/data_governance/)
 
 Centraliza as políticas e diretrizes do projeto e mapeia como a solução atende,
 na prática, aos pilares de **Data Governance**.
@@ -51,7 +51,8 @@ na prática, aos pilares de **Data Governance**.
 ---
 
 ### 🧬 Data Lineage
-📁 `docs/data_lineage/`
+📁 [`docs/data_lineage/`](docs/data_lineage/)
+
 
 Documenta a rastreabilidade ponta a ponta dos dados:
 - Origem dos dados
@@ -60,7 +61,8 @@ Documenta a rastreabilidade ponta a ponta dos dados:
 ---
 
 ### 🧱 Data Modeling
-📁 `docs/data_modeling/`
+📁 [`docs/data_modeling/`](docs/data_modeling/)
+
 
 - Documenta as decisões de modelagem de dados adotadas no projeto:
 - Modelagem OLTP dos dados de origem
@@ -70,7 +72,8 @@ Documenta a rastreabilidade ponta a ponta dos dados:
 ---
 
 ### 🔍 Data Observability
-📁 `docs/data_observability/`
+📁 [`docs/data_observability/`](docs/data_observability/)
+
 
 Mapeia como o projeto atende aos pilares de Data Observability:
 - Freshness
@@ -86,7 +89,8 @@ A observabilidade emerge como resultado das decisões de arquitetura e governan�
 ---
 
 ### 📊 Data Profiling
-📁 `docs/data_profiling/`
+📁 [`docs/data_profiling/`](docs/data_profiling/)
+
 
 Apresenta análises exploratórias e estatísticas dos dados:
 - Volume por camada
@@ -95,17 +99,6 @@ Apresenta análises exploratórias e estatísticas dos dados:
 - Percentual de nulos
 
 Utilizado como base para qualidade e observabilidade.
-
----
-
-### ⚙️ Configurações de Infraestrutura
-📁 `docs/configuracoes/`
-
-- Centraliza guias técnicos de configuração do ambiente de infraestrutura e serviços
-utilizados no projeto:
-- Configuração do PostgreSQL em Docker com SSL/TLS habilitado
-- Criação, permissões e montagem segura de certificados SSL
-- Suporte a acesso seguro por ferramentas externas (ex: Dadosfera)
 
 ---
 
