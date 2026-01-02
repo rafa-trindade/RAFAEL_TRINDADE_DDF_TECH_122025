@@ -620,6 +620,8 @@ O aplicativo disponibiliza visualizações analíticas das marts construídas, p
 
 A aplicação foi configurada para execução contínua no servidor, com acesso público via navegador.
 
+---
+
 🔗 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
 
 ![Streamlit](docs/images/streamlit.png)
