@@ -1,6 +1,4 @@
-# Catálogo de Dados  
-## Tabela: mart_customer_behavior
-
+# Catálogo de Dados  - `mart_customer_behavior`
 
 
 ## Descrição
@@ -10,45 +8,33 @@ Apresenta métricas de volume de pedidos, valor total gasto (LTV) e ticket médi
 Cada linha representa **um cliente único**, considerando todo o seu histórico de compras.
 
 
-
 ## Granularidade
-- Por cliente
-
+- Por Cliente
 
 
 ## Chave lógica
-- customer_id
-
+- `customer_id`
 
 
 ## Dicionário de Campos
 
-### customer_id
+### `customer_id`
 - **Descrição:** Identificador único do cliente.
 
-
-
-### customer_state
+### `customer_state`
 - **Descrição:** Estado (UF) do cliente.
 
-
-
-### total_pedidos
+### `total_pedidos`
 - **Descrição:** Quantidade total de pedidos realizados pelo cliente.
 - **Observação:** Considera pedidos distintos.
 
-
-
-### ltv
+### `ltv`
 - **Descrição:** Valor total gasto pelo cliente ao longo do tempo.
 - **Conceito:** Lifetime Value (LTV).
 
-
-
-### ticket_medio_cliente
+### `ticket_medio_cliente`
 - **Descrição:** Valor médio gasto por pedido pelo cliente.
 - **Observação:** Calculado apenas quando o cliente possui pedidos válidos.
-
 
 
 ## Regras de Negócio
@@ -58,13 +44,11 @@ Cada linha representa **um cliente único**, considerando todo o seu histórico 
 - Clientes sem pedidos não possuem ticket médio calculado.
 
 
-
 ## Uso Recomendado
 - Análise de comportamento e perfil de clientes
 - Segmentação por valor (LTV)
 - Avaliação de ticket médio por cliente
 - Dashboards de CRM e performance comercial
-
 
 
 ## Camada de Dados

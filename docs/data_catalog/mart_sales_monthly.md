@@ -1,6 +1,4 @@
-# Catálogo de Dados  
-## Tabela: mart_sales_monthly
-
+# Catálogo de Dados - `mart_sales_monthly`
 
 
 ## Descrição
@@ -9,43 +7,33 @@ Tabela analítica que consolida as **vendas mensais**, apresentando a receita to
 Cada linha representa o desempenho de vendas de **um mês específico**.
 
 
-
 ## Granularidade
 - Mensal
 
 
-
 ## Chave lógica
-- ano  
-- mes  
-
+- `ano`  
+- `mes`  
 
 
 ## Dicionário de Campos
 
-### ano
+### `ano`
 - **Descrição:** Ano de referência das vendas.
 
-
-
-### mes
+### `mes`
 - **Descrição:** Mês de referência das vendas.
 - **Domínio:** 1 a 12
 
-
-
-### receita_mensal
+### `receita_mensal`
 - **Descrição:** Valor total da receita gerada no mês.
 
-
-
-### crescimento_mom
+### `crescimento_mom`
 - **Descrição:** Crescimento percentual da receita em relação ao mês anterior (Month over Month).
 - **Observações:**
   - Pode ser **nulo** quando não existe mês anterior.
   - Pode ser **nulo** quando a receita do mês anterior é zero.
   - Valores negativos indicam queda de receita.
-
 
 
 ## Regras de Negócio
@@ -54,13 +42,11 @@ Cada linha representa o desempenho de vendas de **um mês específico**.
 - O crescimento é calculado apenas quando há receita válida no mês anterior.
 
 
-
 ## Uso Recomendado
 - Análise de evolução mensal de vendas
 - Monitoramento de crescimento ou retração
 - Análises de tendência e sazonalidade
 - Dashboards executivos e financeiros
-
 
 
 ## Camada de Dados
