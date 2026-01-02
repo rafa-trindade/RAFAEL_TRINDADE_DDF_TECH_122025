@@ -120,6 +120,17 @@ distribuídas em múltiplos guias técnicos:
 
 ---
 
+### 🎤 Apresentação - Pitch Técnico
+📄 [`docs/apresentacao/`](docs/apresentacao/pitch-tecnico.md)
+
+Documenta a **apresentação executiva e técnica do case**, conectando os resultados da **Prova de Conceito (PoC)** à evolução natural da solução na plataforma **Dadosfera**:
+- Síntese do que foi validado tecnicamente na PoC
+- Limitações operacionais de uma arquitetura manual
+- Dadosfera como plataforma de **centralização, governança e escala**
+- Evolução do pipeline para um cenário produtivo e sustentável
+- Visão de próximos passos analíticos e estratégicos
+
+---
 
 # 📑 Itens do Case
 
@@ -318,8 +329,8 @@ A ingestão foi dividida em etapas claras:
 - Execução a partir de VPS dedicada
 - PostgreSQL em container com SSL habilitado
 
-🔗 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
-🔗 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
+#### 🔗 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
+#### 🔗 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
 
 ![dadosfera](docs/images/dadosfera.png)
 
@@ -582,7 +593,7 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 
 O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
 
-🔗 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
+#### 🔗 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
 
 ![Metabase](docs/images/metabase.png)
 
@@ -607,7 +618,7 @@ Essa configuração garantiu:
 
 ---
 
-🔗 **[[PIPELINE DADOSFERA](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**
+#### 🔗 **[[PIPELINE DADOSFERA](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**
 
 ![dadosfera](docs/images/dadosfera.png)
 
@@ -622,14 +633,24 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 
 ---
 
-🔗 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
+#### 🔗 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
 
 ![Streamlit](docs/images/streamlit.png)
 
 
 ## Item 10 - Apresentação (Pitch Técnico)
-Apresentação da solução e demonstração da viabilidade de substituição da arquitetura atual pela Dadosfera.
 
-🔗 **[[LINK PARA O VÍDEO NO YOUTUBE](https://youtu.be/Qdtoash-hRI)]**
+Apresentação da solução desenvolvida e demonstração da viabilidade de substituição de uma arquitetura analítica manual pela plataforma Dadosfera.
 
+O pitch aborda:
+- O que foi validado na Prova de Conceito
+- As limitações operacionais de uma arquitetura gerenciada manualmente
+- Como a Dadosfera centraliza, governa e escala o ciclo de dados
+- Próximos passos estratégicos após a PoC
 
+---
+
+#### 🔗 **[[APRESENTAÇÃO DO CASE TÉCNICO](https://youtu.be/Qdtoash-hRI)]**
+
+### 🔗 Documentação Complementar
+> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/apresentacao/pitch-tecnico.md)
