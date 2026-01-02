@@ -25,8 +25,7 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 ![Arquitetura](docs/images/arquitetura_proposta.png)
 
 
-### 📚 Mapeamento da Documentação
-
+## 📚 Mapeamento da Documentação
 
 ### 🏗️ Data Architecture
 📄 [`docs/data_architecture/`](docs/data_architecture/README.md)
