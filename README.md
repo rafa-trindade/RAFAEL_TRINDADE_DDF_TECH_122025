@@ -111,7 +111,7 @@ Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
 ---
 
 ### 🧱 Infraestrutura e Execução
-📁 [`docs/infraestrutura_*`](docs/infraestrutura)
+📁 [`docs/infrastructure_*`](docs/infrastructure)
 
 Documenta as configurações técnicas e operacionais do ambiente de execução,
 distribuídas em múltiplos guias técnicos:
@@ -121,7 +121,7 @@ distribuídas em múltiplos guias técnicos:
 ---
 
 ### 🎤 Apresentação - Pitch Técnico
-📄 [`docs/apresentacao/`](docs/apresentacao/README.md)
+📄 [`docs/presentation/`](docs/presentation/README.md)
 
 Documenta a **apresentação executiva e técnica do case**, conectando os resultados da **Prova de Conceito (PoC)** à evolução natural da solução na plataforma **Dadosfera**:
 - Síntese do que foi validado tecnicamente na PoC
@@ -623,7 +623,7 @@ Essa configuração garantiu:
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura e organização dos pipelines: [`data_architecture.md`](docs/data_architecture/README.md)  
 > 📄 Estratégia de governança, versionamento e reprocessamento: [`data_governance.md`](docs/data_governance/README.md)  
-> 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
+> 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infrastructure/postgres_ssl_setup.md)
 
 ---
 
@@ -662,4 +662,4 @@ O pitch aborda:
 #### 🔗 **[[APRESENTAÇÃO DO CASE TÉCNICO](https://youtu.be/Qdtoash-hRI)]**
 
 ### 🔗 Documentação Complementar
-> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/apresentacao/README.md)
+> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/presentation/README.md)
