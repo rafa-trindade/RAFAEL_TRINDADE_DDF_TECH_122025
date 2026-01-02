@@ -63,3 +63,4 @@ Governança, neste contexto, **não é um silo**, mas uma camada transversal.
 - Custos controlados
 - Reprocessamento como regra, não exceção
 - Governança aplicada via código e automação
+
