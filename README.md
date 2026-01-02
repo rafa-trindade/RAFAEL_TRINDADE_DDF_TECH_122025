@@ -39,6 +39,20 @@ Descreve a arquitetura técnica da **Prova de Conceito (PoC)** em execução:
 
 ---
 
+### 📘 Data Catalog
+📁 [`docs/data_catalog/*`](docs/data_catalog/)
+
+Centraliza a **documentação semântica dos modelos analíticos (Data Marts)**, descrevendo de forma clara e padronizada:
+- Objetivo e contexto de cada tabela analítica
+- Granularidade e chaves lógicas
+- Significado dos campos e métricas
+- Regras de negócio aplicadas
+- Principais casos de uso analíticos
+
+Funciona como a **camada de tradução entre engenharia e consumo de dados**, facilitando o entendimento por analistas, times de negócio e stakeholders.
+
+---
+
 ### 🏛️ Data Governance
 📄 [`docs/data_governance/`](docs/data_governance/README.md)
 
@@ -83,7 +97,7 @@ governança e qualidade de dados**, sem dependência de ferramentas externas.
 ---
 
 ### 📊 Data Profiling
-📁 [`docs/data_profiling/landing_*`](docs/data_profiling/landing/)
+📁 [`docs/data_profiling/landing/*`](docs/data_profiling/landing/)
 
 Apresenta análises exploratórias e estatísticas dos dados na camada **Landing**,
 com **um relatório de profiling por dataset**:
@@ -111,7 +125,7 @@ Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
 ---
 
 ### 🧱 Infraestrutura e Execução
-📁 [`docs/infrastructure_*`](docs/infrastructure)
+📁 [`docs/infrastructure/*`](docs/infrastructure)
 
 Documenta as configurações técnicas e operacionais do ambiente de execução,
 distribuídas em múltiplos guias técnicos:
@@ -353,7 +367,7 @@ A ingestão foi dividida em etapas claras:
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
 > 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
-> 📁 Profiles da camada Landing: [`data_profiling/`](docs/data_profiling/landing)
+> 📁 Profiles da camada Landing: [`data_profiling/landing/*`](docs/data_profiling/landing)
 
 
 
@@ -419,6 +433,7 @@ Otimização para consultas analíticas e performance no BI.
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
+> 📁 Catálogo semântico dos Data Marts: [`data_catalog/*`](docs/data_catalog/)
 
 
 ## Item 7 - Analisar (Visualização)
@@ -594,6 +609,7 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
 > 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)
+> 📁 Definição das métricas e tabelas analíticas: [`data_catalog/*`](docs/data_catalog/)
 
 ---
 
