@@ -432,7 +432,7 @@ Otimização para consultas analíticas e performance no BI.
 ---
 
 ### 🔗 Documentação Técnica Relacionada
-> 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
+> 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)  
 > 📁 Catálogo semântico dos Data Marts: [`data_catalog/*`](docs/data_catalog/)
 
 
@@ -608,7 +608,7 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
-> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)
+> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
 > 📁 Definição das métricas e tabelas analíticas: [`data_catalog/*`](docs/data_catalog/)
 
 ---
