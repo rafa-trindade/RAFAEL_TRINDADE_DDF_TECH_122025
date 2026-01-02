@@ -297,7 +297,7 @@ Brazilian E-Commerce Dataset by Olist (Kaggle).
 
 A ingestão foi dividida em etapas claras:
 
-**Extração Kaggle → MinIO (Landing)**
+### 1️⃣ Extração Kaggle → MinIO (Landing)
 
 - Scripts em Python
 - Versionamento por `run_id`
@@ -306,7 +306,9 @@ A ingestão foi dividida em etapas claras:
 
 ![Minio](docs/images/minio.png)
 
-**Carga Analítica no Data Warehouse**
+---
+
+### 2️⃣ Carga Analítica no Data Warehouse
 
 - PostgreSQL utilizado como Data Warehouse analítico
 - Transformações realizadas com dbt
@@ -317,7 +319,9 @@ A ingestão foi dividida em etapas claras:
 
 ![dw](docs/images/dw.png)
 
-**Carga e catalogação dos dados utilizando o módulo de Coleta da Dadosfera.**
+---
+
+### 3️⃣ Carga e catalogação dos dados utilizando o módulo de Coleta da Dadosfera.
 
 - Módulo de Coleta da Dadosfera
 - Execução a partir de VPS dedicada
@@ -328,7 +332,9 @@ A ingestão foi dividida em etapas claras:
 
 ![dadosfera](docs/images/dadosfera.png)
 
-**Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)**
+---
+
+### 4️⃣ Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)
 
 - Organização incremental
 - Padronização de schemas
