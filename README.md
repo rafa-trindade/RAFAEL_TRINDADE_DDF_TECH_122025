@@ -323,14 +323,8 @@ A ingestão foi dividida em etapas claras:
 - Execução a partir de VPS dedicada
 - PostgreSQL em container com SSL habilitado
 
-### 🔗 Documentação Técnica Relacionada
-> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
-> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
-> 📁 Profiles da camada Landing: [`data_profiling/`](docs/data_profiling/landing)
-
-
-👉 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
-👉 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
+🔗 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**  
+🔗 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
 
 ![dadosfera](docs/images/dadosfera.png)
 
@@ -339,6 +333,12 @@ A ingestão foi dividida em etapas claras:
 - Organização incremental
 - Padronização de schemas
 - Preparação para consumo por modelos de ML
+
+### 🔗 Documentação Técnica Relacionada
+> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
+> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
+> 📁 Profiles da camada Landing: [`data_profiling/`](docs/data_profiling/landing)
+
 
 
 ## Item 4 - Data Quality
@@ -389,9 +389,6 @@ Otimização para consultas analíticas e performance no BI.
 - `dim_date` *(dbt_seed)*
 - `dim_time` *(dbt_seed)*
 
-### 🔗 Documentação Técnica Relacionada
-> 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
-
 ### `modelo_olap`
 
 ![Modelagem](docs/images/olap.png)
@@ -399,6 +396,9 @@ Otimização para consultas analíticas e performance no BI.
 ### origem: `modelo_oltp`
 
 ![oltp](docs/images/oltp.png)
+
+### 🔗 Documentação Técnica Relacionada
+> 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
 
 ---
 
@@ -451,22 +451,6 @@ Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visua
    Análise da dinâmica de crescimento percentual por categoria ao longo do tempo, utilizando cores divergentes para facilitar a comparação visual entre períodos e categorias.
 
 Cada visualização teve sua **query SQL salva** e o **print do resultado** anexado a este documento como evidência da execução.
-
-### 🔗 Documentação Técnica Relacionada
-> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
-> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)
-
----
-
-### 🔗 Acesso ao Dashboard:
-
-O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
-
-👉 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
-
-![Metabase](docs/images/metabase.png)
-
----
 
 ### 📊 Visualizações e Análises Criadas:
 
@@ -588,9 +572,23 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 
 ---
 
-## Item 8 - Pipelines
+### 🔗 Documentação Técnica Relacionada
+> 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
+> 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)
 
-👉 **[[PIPELINE](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**
+---
+
+### 🔗 Acesso ao Dashboard:
+
+O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
+
+🔗 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
+
+![Metabase](docs/images/metabase.png)
+
+---
+
+## Item 8 - Pipelines
 
 ### Considerações Técnicas:
 
@@ -606,6 +604,9 @@ Essa configuração garantiu:
 > 📄 Estratégia de governança, versionamento e reprocessamento: [`data_governance.md`](docs/data_governance/README.md)  
 > 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
 
+🔗 **[[PIPELINE DADOSFERA](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**
+
+![dadosfera](docs/images/dadosfera.png)
 
 ---
 
@@ -617,7 +618,7 @@ O aplicativo disponibiliza visualizações analíticas das marts construídas, p
 
 A aplicação foi configurada para execução contínua no servidor, com acesso público via navegador.
 
-👉 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
+🔗 **[[STREAMLIT VPS](http://54.39.98.107:8501/)]**
 
 ![Streamlit](docs/images/streamlit.png)
 
