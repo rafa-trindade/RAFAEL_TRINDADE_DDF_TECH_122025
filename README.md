@@ -662,4 +662,4 @@ O pitch aborda:
 #### 🔗 **[[APRESENTAÇÃO DO CASE TÉCNICO](https://youtu.be/Qdtoash-hRI)]**
 
 ### 🔗 Documentação Complementar
-> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/presentation/README.md)
+> 📄 Narrativa executiva do case e pitch técnico: [`presentation.md`](docs/presentation/README.md)
