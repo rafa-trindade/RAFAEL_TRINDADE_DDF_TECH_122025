@@ -8,8 +8,6 @@
 ## 📌 Introdução
 Este repositório contém a resolução do Case Técnico para a posição Engenheiro de Dados Júnior na **Dadosfera**. O projeto foca em uma empresa de E-commerce, utilizando o dataset brasileiro da Olist (Kaggle) para construir uma plataforma de dados ponta a ponta, integrando engenharia moderna, modelagem dimensional e visualiação de dados.
 
----
-
 ## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
 A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehouse Analítico**, combinando **MinIO**, **DuckDB**, **PostgreSQL**, **dbt**, **Pandera** e **Dadosfera**.
 
@@ -26,11 +24,9 @@ A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehou
 
 ![Arquitetura](docs/images/arquitetura_proposta.png)
 
----
 
 ### 📚 Mapeamento da Documentação
 
----
 
 ### 🏗️ Data Architecture
 📄 [`docs/data_architecture/`](docs/data_architecture/README.md)
