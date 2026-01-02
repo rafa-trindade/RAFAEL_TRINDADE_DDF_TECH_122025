@@ -312,6 +312,8 @@ A ingestão foi dividida em etapas claras:
 
 ![Minio](docs/images/minio.png)
 
+---
+
 ### 2️⃣ Carga Analítica no Data Warehouse
 
 - PostgreSQL utilizado como Data Warehouse analítico
@@ -323,6 +325,8 @@ A ingestão foi dividida em etapas claras:
 
 ![dw](docs/images/dw.png)
 
+---
+
 ### 3️⃣ Carga e catalogação dos dados utilizando o módulo de Coleta da Dadosfera.
 
 - Módulo de Coleta da Dadosfera
@@ -333,6 +337,8 @@ A ingestão foi dividida em etapas claras:
 #### 🔗 **[[LINK PARA O DATASET CATALOGADO](https://app.dadosfera.ai/pt-BR/catalog/data-assets?pipeline_id=fb3dc75a-11f8-4c61-99c4-e804871d166d&pipeline_name=RAFAEL%20TRINDADE%20-%20DDF_TECH_122025)]**
 
 ![dadosfera](docs/images/dadosfera.png)
+
+---
 
 ### 4️⃣ Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)
 
@@ -653,4 +659,4 @@ O pitch aborda:
 #### 🔗 **[[APRESENTAÇÃO DO CASE TÉCNICO](https://youtu.be/Qdtoash-hRI)]**
 
 ### 🔗 Documentação Complementar
-> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/apresentacao/pitch-tecnico.md)
+> 📄 Narrativa executiva do case e pitch técnico: [`pitch-tecnico.md`](docs/apresentacao/README.md)
