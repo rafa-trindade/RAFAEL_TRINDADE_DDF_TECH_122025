@@ -306,8 +306,6 @@ A ingestão foi dividida em etapas claras:
 
 ![Minio](docs/images/minio.png)
 
----
-
 ### 2️⃣ Carga Analítica no Data Warehouse
 
 - PostgreSQL utilizado como Data Warehouse analítico
@@ -318,8 +316,6 @@ A ingestão foi dividida em etapas claras:
 - Motor de processamento na camada de ingestão: DuckDB
 
 ![dw](docs/images/dw.png)
-
----
 
 ### 3️⃣ Carga e catalogação dos dados utilizando o módulo de Coleta da Dadosfera.
 
@@ -332,13 +328,13 @@ A ingestão foi dividida em etapas claras:
 
 ![dadosfera](docs/images/dadosfera.png)
 
----
-
 ### 4️⃣ Lakehouse: Landing → Bronze / Silver / Gold (Arquitetura Bônus)
 
 - Organização incremental
 - Padronização de schemas
 - Preparação para consumo por modelos de ML
+
+---
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura de ingestão e processamento: [`data_architecture.md`](docs/data_architecture/README.md)  
@@ -364,6 +360,8 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 📁 [`reports/dbt/staging/`](reports/dbt/staging/)  
 📁 [`reports/dbt/core/`](reports/dbt/core/)  
 📁 [`reports/dbt/marts/`](reports/dbt/marts/)
+
+---
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Detalhamento das regras de qualidade: [`data_quality.md`](docs/data_quality/README.md)
@@ -403,10 +401,11 @@ Otimização para consultas analíticas e performance no BI.
 
 ![oltp](docs/images/oltp.png)
 
+---
+
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)
 
----
 
 ## Item 7 - Analisar (Visualização)
 
@@ -592,7 +591,6 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 
 ![Metabase](docs/images/metabase.png)
 
----
 
 ## Item 8 - Pipelines
 
@@ -605,16 +603,19 @@ Essa configuração garantiu:
 - Segurança no processo de ingestão e processamento dos dados
 - Estabilidade e confiabilidade para execução dos pipelines
 
+---
+
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura e organização dos pipelines: [`data_architecture.md`](docs/data_architecture/README.md)  
 > 📄 Estratégia de governança, versionamento e reprocessamento: [`data_governance.md`](docs/data_governance/README.md)  
 > 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infraestrutura/postgres_ssl_setup.md)
 
+---
+
 🔗 **[[PIPELINE DADOSFERA](https://app.dadosfera.ai/pt-BR/collect/pipelines/fb3dc75a-11f8-4c61-99c4-e804871d166d)]**
 
 ![dadosfera](docs/images/dadosfera.png)
 
----
 
 ## Item 9 - Data App (Streamlit)
 
@@ -628,7 +629,6 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 
 ![Streamlit](docs/images/streamlit.png)
 
----
 
 ## Item 10 - Apresentação (Pitch Técnico)
 Apresentação da solução e demonstração da viabilidade de substituição da arquitetura atual pela Dadosfera.
