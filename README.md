@@ -156,6 +156,8 @@ O Kanban possibilitou:
 
 O quadro foi implementado utilizando o **GitHub Projects**, integrando planejamento, execução e versionamento do código em um único ambiente.
 
+#### 🔗 **[[GITHUB PROJECT](https://github.com/users/rafa-trindade/projects/2)]**
+
 ![Quadro GitHub Projects](docs/images/project.png)
 
 ### 📊 Matriz Formal de Riscos e Custos (PMBOK)
@@ -600,6 +602,7 @@ ORDER BY PRODUCT_CATEGORY_NAME, ANO, MES;
 O dashboard consolidando todas as visualizações criadas neste item está disponível no módulo de Visualização da Dadosfera e pode ser acessado por meio do link abaixo:
 
 #### 🔗 **[[DASHBOARD METABASE DADOSFERA](https://metabase-treinamentos.dadosfera.ai/dashboard/229-rafael-trindade-122025-dashboard)]**
+
 
 ![Metabase](docs/images/metabase.png)
 
