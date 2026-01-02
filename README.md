@@ -121,7 +121,7 @@ distribuídas em múltiplos guias técnicos:
 ---
 
 ### 🎤 Apresentação - Pitch Técnico
-📄 [`docs/apresentacao/`](docs/apresentacao/pitch-tecnico.md)
+📄 [`docs/apresentacao/`](docs/apresentacao/README.md)
 
 Documenta a **apresentação executiva e técnica do case**, conectando os resultados da **Prova de Conceito (PoC)** à evolução natural da solução na plataforma **Dadosfera**:
 - Síntese do que foi validado tecnicamente na PoC
