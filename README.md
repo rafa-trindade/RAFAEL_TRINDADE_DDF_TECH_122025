@@ -630,6 +630,6 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 ## Item 10 - Apresentação (Pitch Técnico)
 Apresentação da solução e demonstração da viabilidade de substituição da arquitetura atual pela Dadosfera.
 
-👉 **[LINK PARA O VÍDEO NO YOUTUBE - NÃO LISTADO]**
+🔗 **[[LINK PARA O VÍDEO NO YOUTUBE](https://youtu.be/Qdtoash-hRI)]**
 
 
