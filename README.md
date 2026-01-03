@@ -435,19 +435,6 @@ O processo consistiu em:
 
 ---
 
-### Escopo do Catálogo:
-
-O catálogo gerado contempla, para cada Data Mart:
-
-- Descrição funcional da tabela
-- Objetivo analítico
-- Granularidade dos dados
-- Principais métricas
-- Dimensões associadas
-- Observações relevantes de negócio
-
----
-
 ### Entregável:
 
 Catálogo de dados gerado automaticamente a partir dos modelos SQL:  
