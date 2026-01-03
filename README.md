@@ -152,7 +152,7 @@ Documenta a **apresentação executiva e técnica do case**, conectando os resul
 
 # 📑 Itens do Case
 
-## Item 0 - Agilidade e Planejamento
+# Item 0 - Agilidade e Planejamento
 
 ### Metodologia:
 
@@ -295,11 +295,13 @@ A escolha do Pandera permitiu implementar validações robustas e reproduzíveis
 O projeto foi planejado e executado com base nas boas práticas do **PMBOK**, garantindo controle de riscos, previsibilidade de custos e alocação eficiente de recursos, aliado a uma execução ágil, incremental e orientada à entrega de valor.
 
 
-## Item 1 - Base de Dados
+# Item 1 - Base de Dados
 
 ### Dataset:
 
 Brazilian E-Commerce Dataset by Olist (Kaggle).
+
+---
 
 ### Justificativa:
 
@@ -307,6 +309,8 @@ Brazilian E-Commerce Dataset by Olist (Kaggle).
 - Domínio aderente ao cenário de e-commerce
 - Volume superior a 100.000 registros
 - Contém dados transacionais e descritivos
+
+---
 
 ### Principais tabelas:
 
@@ -317,7 +321,7 @@ Brazilian E-Commerce Dataset by Olist (Kaggle).
 - `olist_geolocation_dataset`
 
 
-## Item 2 e 3 - Integrar e Explorar (Dadosfera)
+# Item 2 e 3 - Integrar e Explorar (Dadosfera)
 
 ### Estratégia de Ingestão:
 
@@ -375,16 +379,20 @@ A ingestão foi dividida em etapas claras:
 
 
 
-## Item 4 - Data Quality
+# Item 4 - Data Quality
 
 ### Abordagem:
 
 A qualidade dos dados foi tratada desde o início do pipeline.
 
+---
+
 ### Ferramentas Utilizadas:
 
 - **Pandera (Python)** - validação de schemas
 - **dbt tests** - testes analíticos
+
+---
 
 ### Entregável:
 
@@ -399,7 +407,7 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 > 📄 Detalhamento das regras de qualidade: [`data_quality.md`](docs/data_quality/README.md)
 
 
-## Item 5 - GenAI e LLMs (Data Catalog)
+# Item 5 - GenAI e LLMs
 
 ### Objetivo:
 
@@ -423,7 +431,6 @@ O processo consistiu em:
 - Geração automática de documentação em formato **Markdown**
 - Versionamento do catálogo junto ao código-fonte do projeto
 
-
 ---
 
 ### Benefícios da Abordagem com LLM:
@@ -432,6 +439,7 @@ O processo consistiu em:
 - Padronização das descrições dos Data Marts
 - Facilidade de manutenção e atualização do catálogo
 - Demonstração prática do uso de **IA aplicada à governança de dados**
+- Aderência ao contexto de PoC, priorizando agilidade e entrega de valor
 
 ---
 
@@ -441,7 +449,7 @@ Catálogo de dados gerado automaticamente a partir dos modelos SQL:
 📁 [`data_catalog/*`](docs/data_catalog/)
 
 
-## Item 6 - Modelagem de Dados
+# Item 6 - Modelagem de Dados
 
 Modelagem dimensional seguindo os princípios de Ralph Kimball.
 
@@ -449,9 +457,13 @@ Modelagem dimensional seguindo os princípios de Ralph Kimball.
  
  Star Schema (Tabelas Fato e Dimensão).
 
+---
+
 ### Justificativa:
 
 Otimização para consultas analíticas e performance no BI.
+
+---
 
 ### Estrutura Final:
 
@@ -467,9 +479,13 @@ Otimização para consultas analíticas e performance no BI.
 - `dim_date` *(dbt_seed)*
 - `dim_time` *(dbt_seed)*
 
+---
+
 ### `modelo_olap`
 
 ![Modelagem](docs/images/olap.png)
+
+---
 
 ### origem: `modelo_oltp`
 
@@ -482,7 +498,7 @@ Otimização para consultas analíticas e performance no BI.
 > 📁 Catálogo semântico dos Data Marts: [`data_catalog/*`](docs/data_catalog/)
 
 
-## Item 7 - Analisar (Visualização)
+# Item 7 - Analisar (Visualização)
 
 ### Acesso ao módulo de Visualização:
 
@@ -531,6 +547,8 @@ Foram criadas **5 perguntas (queries)** utilizando **5 tipos diferentes de visua
    Análise da dinâmica de crescimento percentual por categoria ao longo do tempo, utilizando cores divergentes para facilitar a comparação visual entre períodos e categorias.
 
 Cada visualização teve sua **query SQL salva** e o **print do resultado** anexado a este documento como evidência da execução.
+
+---
 
 ### 📊 Visualizações e Análises Criadas:
 
@@ -669,7 +687,7 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 ![Metabase](docs/images/metabase.png)
 
 
-## Item 8 - Pipelines
+# Item 8 - Pipelines
 
 ### Considerações Técnicas:
 
@@ -694,7 +712,7 @@ Essa configuração garantiu:
 ![dadosfera](docs/images/dadosfera.png)
 
 
-## Item 9 - Data App (Streamlit)
+# Item 9 - Data App (Streamlit)
 
 Desenvolvimento de um Data App interativo com Streamlit, implantado em uma VPS dedicada.
 
@@ -709,7 +727,7 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 ![Streamlit](docs/images/streamlit.png)
 
 
-## Item 10 - Apresentação (Pitch Técnico)
+# Item 10 - Apresentação (Pitch Técnico)
 
 Apresentação da solução desenvolvida e demonstração da viabilidade de substituição de uma arquitetura analítica manual pela plataforma Dadosfera.
 
@@ -719,9 +737,9 @@ O pitch aborda:
 - Como a Dadosfera centraliza, governa e escala o ciclo de dados
 - Próximos passos estratégicos após a PoC
 
----
-
 #### 🔗 **[[APRESENTAÇÃO DO CASE TÉCNICO](https://youtu.be/Qdtoash-hRI)]**
+
+---
 
 ### 🔗 Documentação Complementar
 > 📄 Narrativa executiva do case e pitch técnico: [`presentation.md`](docs/presentation/README.md)
