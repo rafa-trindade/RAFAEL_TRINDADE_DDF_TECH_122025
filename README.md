@@ -51,7 +51,7 @@ Centraliza a **documentação semântica dos modelos analíticos (Data Marts)**,
 
 Funciona como a **camada de tradução entre engenharia e consumo de dados**, facilitando o entendimento por analistas, times de negócio e stakeholders.
 
-> **Observação:** Para esta **Prova de Conceito (PoC)**, o catálogo foi **gerado automaticamente com apoio de um LLM**, a partir da leitura e interpretação dos modelos SQL dos Data Marts, resultando em documentação versionada, padronizada e alinhada ao código analítico.
+> **Observação:** Para esta **Prova de Conceito (PoC)**, o catálogo foi **gerado automaticamente com apoio de um LLM**, a partir da leitura e interpretação dos modelos SQL dos Data Marts, resultando em documentação versionada e padronizada.
 
 ---
 
