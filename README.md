@@ -294,6 +294,10 @@ A escolha do Pandera permitiu implementar validações robustas e reproduzíveis
 
 O projeto foi planejado e executado com base nas boas práticas do **PMBOK**, garantindo controle de riscos, previsibilidade de custos e alocação eficiente de recursos, aliado a uma execução ágil, incremental e orientada à entrega de valor.
 
+---
+
+<br>
+<br>
 
 # Item 1 - Base de Dados
 
@@ -320,6 +324,10 @@ Brazilian E-Commerce Dataset by Olist (Kaggle).
 - `olist_customers_dataset`
 - `olist_geolocation_dataset`
 
+---
+
+<br>
+<br>
 
 # Item 2 e 3 - Integrar e Explorar (Dadosfera)
 
@@ -377,7 +385,10 @@ A ingestão foi dividida em etapas claras:
 > 📄 Lineage completo dos dados: [`data_lineage.md`](docs/data_lineage/README.md)  
 > 📁 Profiles da camada Landing: [`data_profiling/landing/*`](docs/data_profiling/landing)
 
+---
 
+<br>
+<br>
 
 # Item 4 - Data Quality
 
@@ -396,16 +407,21 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 ### Entregável:
 
-📁 [`reports/pandera/landing/`](reports/pandera/landing/)  
-📁 [`reports/dbt/staging/`](reports/dbt/staging/)  
-📁 [`reports/dbt/core/`](reports/dbt/core/)  
-📁 [`reports/dbt/marts/`](reports/dbt/marts/)
+> Relatórios de qualidade de dados gerados pela pipeline:  
+> 📁 [`reports/pandera/landing/`](reports/pandera/landing/)  
+> 📁 [`reports/dbt/staging/`](reports/dbt/staging/)  
+> 📁 [`reports/dbt/core/`](reports/dbt/core/)  
+> 📁 [`reports/dbt/marts/`](reports/dbt/marts/)
 
 ---
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Detalhamento das regras de qualidade: [`data_quality.md`](docs/data_quality/README.md)
 
+---
+
+<br>
+<br>
 
 # Item 5 - GenAI e LLMs
 
@@ -445,9 +461,13 @@ O processo consistiu em:
 
 ### Entregável:
 
-Catálogo de dados gerado automaticamente a partir dos modelos SQL:  
-📁 [`data_catalog/*`](docs/data_catalog/)
+> Catálogo de dados gerado automaticamente a partir dos modelos SQL:  
+> 📁 [`data_catalog/*`](docs/data_catalog/)
 
+---
+
+<br>
+<br>
 
 # Item 6 - Modelagem de Dados
 
@@ -497,6 +517,10 @@ Otimização para consultas analíticas e performance no BI.
 > 📄 Rastreabilidade das transformações: [`data_lineage.md`](docs/data_lineage/README.md)  
 > 📁 Catálogo semântico dos Data Marts: [`data_catalog/*`](docs/data_catalog/)
 
+---
+
+<br>
+<br>
 
 # Item 7 - Analisar (Visualização)
 
@@ -686,6 +710,10 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 
 ![Metabase](docs/images/metabase.png)
 
+---
+
+<br>
+<br>
 
 # Item 8 - Pipelines
 
@@ -711,6 +739,10 @@ Essa configuração garantiu:
 
 ![dadosfera](docs/images/dadosfera.png)
 
+---
+
+<br>
+<br>
 
 # Item 9 - Data App (Streamlit)
 
@@ -726,6 +758,10 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 
 ![Streamlit](docs/images/streamlit.png)
 
+---
+
+<br>
+<br>
 
 # Item 10 - Apresentação (Pitch Técnico)
 
