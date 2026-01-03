@@ -5,15 +5,13 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import errors
 
-# --------------------------------------------------
-# 1. Configurações de Caminhos (Paths)
-# --------------------------------------------------
+
 BASE_DIR = Path(__file__).resolve().parents[2]
 SQL_SCRIPTS_DIR = BASE_DIR / "dbt/models/marts/"
 OUTPUT_DIR = BASE_DIR / "docs/data_catalog"
 
 # --------------------------------------------------
-# 2. Inicialização do Cliente Gemini
+# Inicialização do Cliente Gemini
 # --------------------------------------------------
 load_dotenv(BASE_DIR / ".env")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -24,7 +22,7 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # --------------------------------------------------
-# 3. Prompt com Exemplo Real (Few-Shot)
+# Prompt com Exemplo Real (Few-Shot)
 # --------------------------------------------------
 CATALOG_PROMPT = """
 Você é um Engenheiro de Analytics especialista em dbt e Governança de Dados.
@@ -132,14 +130,14 @@ NOME DO MODEL: {model_name} SQL PARA PROCESSAR:
 """
 
 # --------------------------------------------------
-# 4. Funções de Processamento
+# Funções de Processamento
 # --------------------------------------------------
 def read_sql_file(path: Path) -> str:
-    """Lê o conteúdo do arquivo SQL."""
+
     return path.read_text(encoding="utf-8")
 
 def generate_markdown(sql: str, model_name: str) -> str:
-    """Envia o SQL para a IA e retorna o Markdown formatado."""
+
     prompt = CATALOG_PROMPT.format(sql=sql, model_name=model_name)
     
     try:
@@ -154,18 +152,18 @@ def generate_markdown(sql: str, model_name: str) -> str:
         
     except errors.ClientError as e:
         if "429" in str(e):
-            print("🕒 Cota atingida (Rate Limit). Aguardando 60 segundos...")
+            print("🕒 Cota atingida. Aguardando 60 segundos...")
             time.sleep(60)
             return generate_markdown(sql, model_name)
         raise e
 
 def save_markdown(content: str, output_path: Path):
-    """Salva o Markdown gerado diretamente no diretório de destino."""
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(content, encoding="utf-8")
 
 # --------------------------------------------------
-# 5. Execução Principal (Main)
+# ENTRYPOINT
 # --------------------------------------------------
 def main():
     
