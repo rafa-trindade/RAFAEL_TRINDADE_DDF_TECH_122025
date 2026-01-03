@@ -297,7 +297,6 @@ O projeto foi planejado e executado com base nas boas práticas do **PMBOK**, ga
 ---
 
 <br>
-<br>
 
 # Item 1 - Base de Dados
 
@@ -326,7 +325,6 @@ Brazilian E-Commerce Dataset by Olist (Kaggle).
 
 ---
 
-<br>
 <br>
 
 # Item 2 e 3 - Integrar e Explorar (Dadosfera)
@@ -388,7 +386,6 @@ A ingestão foi dividida em etapas claras:
 ---
 
 <br>
-<br>
 
 # Item 4 - Data Quality
 
@@ -420,7 +417,6 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 ---
 
-<br>
 <br>
 
 # Item 5 - GenAI e LLMs
@@ -466,7 +462,6 @@ O processo consistiu em:
 
 ---
 
-<br>
 <br>
 
 # Item 6 - Modelagem de Dados
@@ -519,7 +514,6 @@ Otimização para consultas analíticas e performance no BI.
 
 ---
 
-<br>
 <br>
 
 # Item 7 - Analisar (Visualização)
@@ -713,7 +707,6 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 ---
 
 <br>
-<br>
 
 # Item 8 - Pipelines
 
@@ -742,7 +735,6 @@ Essa configuração garantiu:
 ---
 
 <br>
-<br>
 
 # Item 9 - Data App (Streamlit)
 
@@ -760,7 +752,6 @@ A aplicação foi configurada para execução contínua no servidor, com acesso 
 
 ---
 
-<br>
 <br>
 
 # Item 10 - Apresentação (Pitch Técnico)
