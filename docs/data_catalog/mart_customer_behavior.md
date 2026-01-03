@@ -2,14 +2,13 @@
 
 
 ## Descrição
-Tabela analítica que consolida **informações de comportamento de compra dos clientes**.  
-Apresenta métricas de volume de pedidos, valor total gasto (LTV) e ticket médio por cliente.
+Tabela analítica que consolida métricas essenciais de **comportamento de compra e valor** dos clientes (Lifetime Value - LTV).
 
-Cada linha representa **um cliente único**, considerando todo o seu histórico de compras.
+Esta tabela é utilizada para **segmentação**, análise de valor e identificação dos clientes mais engajados. Cada linha representa um cliente único.
 
 
 ## Granularidade
-- Por Cliente
+- Por Cliente (Unidade: `customer_id`)
 
 
 ## Chave lógica
@@ -22,35 +21,35 @@ Cada linha representa **um cliente único**, considerando todo o seu histórico 
 - **Descrição:** Identificador único do cliente.
 
 ### `customer_state`
-- **Descrição:** Estado (UF) do cliente.
+- **Descrição:** Sigla do estado (UF) de residência do cliente.
+- **Domínio:** Estados brasileiros (e.g., SP, RJ, MG).
 
 ### `total_pedidos`
-- **Descrição:** Quantidade total de pedidos realizados pelo cliente.
-- **Observação:** Considera pedidos distintos.
+- **Descrição:** Número total de pedidos únicos realizados pelo cliente.
 
 ### `ltv`
-- **Descrição:** Valor total gasto pelo cliente ao longo do tempo.
-- **Conceito:** Lifetime Value (LTV).
+- **Descrição:** Lifetime Value do cliente, calculado como o valor total dos itens comprados por este cliente ao longo do tempo.
+- **Observação:** É a soma dos campos `total_item_value`.
 
 ### `ticket_medio_cliente`
-- **Descrição:** Valor médio gasto por pedido pelo cliente.
-- **Observação:** Calculado apenas quando o cliente possui pedidos válidos.
+- **Descrição:** Valor médio gasto pelo cliente por pedido.
+- **Cálculo:** `ltv` / `total_pedidos`.
+- **Observação:** Arredondado para duas casas decimais.
 
 
 ## Regras de Negócio
-- O total de pedidos considera apenas pedidos distintos.
-- O LTV é a soma do valor total dos itens comprados pelo cliente.
-- O ticket médio é obtido dividindo o LTV pelo total de pedidos.
-- Clientes sem pedidos não possuem ticket médio calculado.
+- O cálculo do LTV considera apenas o valor dos itens, excluindo frete e taxas externas não presentes em `fact_order_items`.
+- O ticket médio é protegido contra divisão por zero (`NULLIF`).
+- A agregação é estritamente no nível do cliente.
 
 
 ## Uso Recomendado
-- Análise de comportamento e perfil de clientes
-- Segmentação por valor (LTV)
-- Avaliação de ticket médio por cliente
-- Dashboards de CRM e performance comercial
+- Segmentação de clientes (Análise de valor, RFM)
+- Estratégias de retenção e marketing
+- Análise de dispersão de LTV por estado
+- Visualizações de performance de clientes de alto valor
 
 
 ## Camada de Dados
 - **Tipo:** Data Mart
-- **Finalidade:** Análise de clientes
+- **Finalidade:** Análise Comportamental e LTV (Lifetime Value)

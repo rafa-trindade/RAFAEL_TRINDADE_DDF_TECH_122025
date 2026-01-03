@@ -1,14 +1,14 @@
-# Catálogo de Dados - `mart_sales_daily`
+# Catálogo de Dados  - `mart_sales_daily`
 
 
 ## Descrição
-Tabela analítica que consolida as **vendas diárias**, apresentando métricas de receita, volume de itens vendidos, quantidade de pedidos e ticket médio.
+Tabela analítica que consolida as principais métricas de vendas, incluindo receita, volume de itens e número de pedidos, no **nível diário**. É a base fundamental para o acompanhamento da performance de vendas.
 
-Cada linha representa o desempenho de vendas de **um dia específico**.
+Cada linha representa o desempenho comercial em um **determinado dia**.
 
 
 ## Granularidade
-- Diária
+- Diária (Agregado por data)
 
 
 ## Chave lógica
@@ -18,35 +18,36 @@ Cada linha representa o desempenho de vendas de **um dia específico**.
 ## Dicionário de Campos
 
 ### `data`
-- **Descrição:** Data de referência das vendas.
+- **Descrição:** Data da referência da venda.
 
 ### `receita_diaria`
-- **Descrição:** Valor total da receita gerada no dia.
+- **Descrição:** Valor total da receita bruta gerada no dia.
 
 ### `itens_vendidos`
-- **Descrição:** Quantidade total de itens vendidos no dia.
+- **Descrição:** Número total de itens de pedido vendidos e processados na data.
 
 ### `pedidos`
-- **Descrição:** Quantidade total de pedidos distintos realizados no dia.
+- **Descrição:** Contagem de pedidos distintos realizados no dia.
+- **Observação:** Um único pedido pode conter múltiplos itens.
 
 ### `ticket_medio`
-- **Descrição:** Valor médio de receita por item vendido no dia.
-- **Observação:** Calculado apenas quando há itens vendidos.
+- **Descrição:** Valor médio de cada item vendido (ticket médio por item).
+- **Observação:** Calculado pela divisão da `receita_diaria` pelo total de `itens_vendidos`. Arredondado para 2 casas decimais.
 
 
 ## Regras de Negócio
-- A receita diária é calculada a partir do valor total dos itens vendidos.
-- O total de pedidos considera apenas pedidos distintos.
-- O ticket médio é calculado dividindo a receita pelo total de itens vendidos.
+- A agregação de valores é realizada considerando o item do pedido (`order_item_id`), e não o pedido completo (`order_id`).
+- O cálculo do ticket médio é baseado no item, e não no pedido (cálculo: Receita / Total de Itens).
+- A data utilizada para a agregação é a data do item (derivada da dimensão de data).
 
 
 ## Uso Recomendado
-- Análise de vendas diárias
-- Monitoramento de performance ao longo do tempo
-- Identificação de picos e quedas de vendas
-- Dashboards operacionais e financeiros
+- Acompanhamento diário da performance de vendas (Receita e Volume).
+- Monitoramento de KPIs de volume (pedidos e itens vendidos).
+- Análise de picos de venda e sazonalidade.
+- Base para projeções de curto prazo.
 
 
 ## Camada de Dados
 - **Tipo:** Data Mart
-- **Finalidade:** Análise de vendas
+- **Finalidade:** Análise, BI e visualização (Vendas/Comercial)

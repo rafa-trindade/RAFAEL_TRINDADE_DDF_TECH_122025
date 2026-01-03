@@ -1,14 +1,14 @@
-# Catálogo de Dados - `mart_sales_monthly`
+# Catálogo de Dados  - `mart_sales_monthly`
 
 
 ## Descrição
-Tabela analítica que consolida as **vendas mensais**, apresentando a receita total do mês e o **crescimento percentual em relação ao mês anterior (MoM)**.
+Tabela analítica que consolida a **receita total de vendas a nível mensal**, focada no acompanhamento do **crescimento mês a mês** (Month-over-Month - MoM).
 
-Cada linha representa o desempenho de vendas de **um mês específico**.
+Esta tabela é essencial para monitorar tendências macro de desempenho financeiro e sazonalidade.
 
 
 ## Granularidade
-- Mensal
+- Mensal (Ano e Mês)
 
 
 ## Chave lógica
@@ -19,36 +19,37 @@ Cada linha representa o desempenho de vendas de **um mês específico**.
 ## Dicionário de Campos
 
 ### `ano`
-- **Descrição:** Ano de referência das vendas.
+- **Descrição:** Ano de referência da receita consolidada.
 
 ### `mes`
-- **Descrição:** Mês de referência das vendas.
+- **Descrição:** Mês de referência da receita consolidada.
 - **Domínio:** 1 a 12
 
 ### `receita_mensal`
-- **Descrição:** Valor total da receita gerada no mês.
+- **Descrição:** Valor total da receita bruta consolidada para o respectivo mês e ano.
+- **Origem:** Somatório de `total_item_value`.
 
 ### `crescimento_mom`
-- **Descrição:** Crescimento percentual da receita em relação ao mês anterior (Month over Month).
+- **Descrição:** Taxa de crescimento percentual da receita em comparação com o mês imediatamente anterior.
+- **Cálculo:** `(Receita Atual - Receita Mês Anterior) / Receita Mês Anterior`
 - **Observações:**
-  - Pode ser **nulo** quando não existe mês anterior.
-  - Pode ser **nulo** quando a receita do mês anterior é zero.
-  - Valores negativos indicam queda de receita.
+  - O valor é apresentado em formato decimal (fração), arredondado para 4 casas. Ex: 0.1000 = 10% de crescimento.
+  - Será **nulo** para o primeiro mês registrado na base de dados (não há mês anterior para comparação).
+  - Será **nulo** se a receita do mês anterior for zero (evita divisão por zero).
 
 
 ## Regras de Negócio
-- A receita mensal é calculada a partir da soma do valor total dos itens vendidos.
-- O crescimento MoM compara a receita do mês atual com a do mês imediatamente anterior.
-- O crescimento é calculado apenas quando há receita válida no mês anterior.
+- A agregação é feita pelo somatório da receita total dos itens vendidos (`total_item_value`) para cada combinação única de ano e mês.
+- O cálculo do crescimento MoM é realizado usando a função de janela `LAG` ordenada cronologicamente.
+- A receita é considerada a receita bruta dos itens.
 
 
 ## Uso Recomendado
-- Análise de evolução mensal de vendas
-- Monitoramento de crescimento ou retração
-- Análises de tendência e sazonalidade
-- Dashboards executivos e financeiros
+- Acompanhamento de indicadores financeiros e KPIs executivos.
+- Análise de tendências de crescimento e sazonalidade.
+- Criação de dashboards de performance comercial.
 
 
 ## Camada de Dados
 - **Tipo:** Data Mart
-- **Finalidade:** Análise de vendas mensais
+- **Finalidade:** Análise e visualização de séries temporais de receita.

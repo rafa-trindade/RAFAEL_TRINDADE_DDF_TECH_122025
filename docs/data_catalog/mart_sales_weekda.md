@@ -1,10 +1,10 @@
-# Catálogo de Dados - `mart_sales_weekda`
+# Catálogo de Dados  - `mart_sales_weekda`
 
 
 ## Descrição
-Tabela analítica que consolida as **vendas por dia da semana**, permitindo analisar o comportamento de pedidos, receita e ticket médio conforme o dia.
+Tabela analítica que consolida as **métricas chave de vendas** (receita, pedidos e ticket médio) agregadas por **Dia da Semana**.
 
-Cada linha representa **um dia da semana**.
+Esta tabela é ideal para identificar padrões de sazonalidade semanal e o desempenho comercial em cada dia.
 
 
 ## Granularidade
@@ -18,32 +18,32 @@ Cada linha representa **um dia da semana**.
 ## Dicionário de Campos
 
 ### `nome_dia_semana`
-- **Descrição:** Nome do dia da semana (ex.: Segunda-feira, Terça-feira).
+- **Descrição:** Nome completo do dia da semana (e.g., 'Segunda-feira', 'Sábado').
+- **Fonte:** Derivado da dimensão de data (`dim_date`).
 
 ### `total_pedidos`
-- **Descrição:** Quantidade total de pedidos distintos realizados no dia da semana.
+- **Descrição:** Contagem distinta do número total de pedidos realizados no dia da semana correspondente.
 
 ### `receita_total`
-- **Descrição:** Valor total da receita gerada no dia da semana.
+- **Descrição:** Valor total da receita bruta gerada por todos os itens vendidos no dia da semana.
 
 ### `ticket_medio`
-- **Descrição:** Valor médio de receita por item vendido no dia da semana.
-- **Observação:** Calculado a partir da média do valor dos itens vendidos.
+- **Descrição:** Valor médio das transações (baseado no valor unitário do item de pedido).
+- **Cálculo:** `AVG(total_item_value)`
 
 
 ## Regras de Negócio
-- O total de pedidos considera apenas pedidos distintos.
-- A receita total é calculada a partir do valor total dos itens vendidos.
-- O ticket médio representa a média do valor dos itens, e não a média por pedido.
+- A agregação é feita utilizando o nome do dia da semana, consolidando dados de todos os anos e meses presentes na base.
+- A receita total considera a soma do valor final dos itens de pedido.
+- O cálculo de `total_pedidos` utiliza uma contagem distinta (`DISTINCT`) de `order_id`.
 
 
 ## Uso Recomendado
-- Análise de performance por dia da semana
-- Identificação dos dias com maior volume de vendas
-- Planejamento de campanhas e ações comerciais
-- Dashboards operacionais e estratégicos
+- Análise de sazonalidade semanal de vendas.
+- Otimização de logística e pessoal com base nos dias de maior movimento.
+- Dashboards de desempenho comercial por dia de operação.
 
 
 ## Camada de Dados
 - **Tipo:** Data Mart
-- **Finalidade:** Análise de vendas por dia da semana
+- **Finalidade:** Análise e visualização (Reporting)
