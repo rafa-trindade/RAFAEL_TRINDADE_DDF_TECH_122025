@@ -51,6 +51,8 @@ Centraliza a **documentação semântica dos modelos analíticos (Data Marts)**,
 
 Funciona como a **camada de tradução entre engenharia e consumo de dados**, facilitando o entendimento por analistas, times de negócio e stakeholders.
 
+> **Observação:** Para esta **Prova de Conceito (PoC)**, o catálogo foi **gerado automaticamente com apoio de um LLM**, a partir da leitura e interpretação dos modelos SQL dos Data Marts, resultando em documentação versionada, padronizada e alinhada ao código analítico.
+
 ---
 
 ### 🏛️ Data Governance
@@ -107,6 +109,8 @@ com **um relatório de profiling por dataset**:
 - Percentual de nulos
 
 Utilizado como base para **Data Quality**, **Data Observability** e definição de contratos de dados.
+
+> **Observação:** O profiling foi gerado por meio de um **script utilitário de EDA híbrido (Python + Jupyter Notebook)**, combinando automação e análise exploratória assistida, com geração de relatórios versionados para suporte às decisões de qualidade e modelagem.
 
 ---
 
@@ -393,6 +397,61 @@ A qualidade dos dados foi tratada desde o início do pipeline.
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Detalhamento das regras de qualidade: [`data_quality.md`](docs/data_quality/README.md)
+
+
+## Item 5 - GenAI e LLMs (Data Catalog)
+
+### Objetivo:
+
+Disponibilizar um **catálogo de dados técnico e semântico** dos Data Marts construídos, facilitando o entendimento das tabelas analíticas, métricas, granularidade e regras de negócio.
+
+---
+
+### Abordagem:
+
+Para a **Prova de Conceito (PoC)**, foi adotada uma abordagem **automatizada e orientada por LLM (Large Language Model)** para geração do catálogo de dados, a partir da leitura e interpretação dos modelos SQL dos Data Marts.
+
+O processo consistiu em:
+
+- Leitura automatizada dos arquivos `.sql` dos modelos analíticos (dbt marts)
+- Definição de um template semântico de documentação como referência
+- Aplicação controlada de **engenharia de prompt (Few-Shot)**, utilizando exemplos prévios de Data Marts documentados para orientar o modelo
+- Envio do conteúdo dos modelos SQL para um **LLM**, responsável por:
+  - Interpretar o propósito da tabela
+  - Identificar métricas, dimensões e granularidade
+  - Gerar descrições técnicas e semânticas em linguagem natural
+- Geração automática de documentação em formato **Markdown**
+- Versionamento do catálogo junto ao código-fonte do projeto
+
+
+---
+
+### Benefícios da Abordagem com LLM:
+
+- Redução de esforço manual na documentação
+- Padronização das descrições dos Data Marts
+- Facilidade de manutenção e atualização do catálogo
+- Demonstração prática do uso de **IA aplicada à governança de dados**
+
+---
+
+### Escopo do Catálogo:
+
+O catálogo gerado contempla, para cada Data Mart:
+
+- Descrição funcional da tabela
+- Objetivo analítico
+- Granularidade dos dados
+- Principais métricas
+- Dimensões associadas
+- Observações relevantes de negócio
+
+---
+
+### Entregável:
+
+Catálogo de dados gerado automaticamente a partir dos modelos SQL:  
+📁 [`data_catalog/*`](docs/data_catalog/)
 
 
 ## Item 6 - Modelagem de Dados
