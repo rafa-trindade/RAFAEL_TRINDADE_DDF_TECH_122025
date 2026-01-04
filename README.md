@@ -11,7 +11,7 @@ Este repositório apresenta a resolução do **Case Técnico para a posição de
 
 O projeto tem como contexto uma empresa de **E-commerce** e utiliza o **dataset brasileiro da Olist (Kaggle)** como base para a construção de uma **plataforma de dados ponta a ponta**, desenvolvida no formato de **Prova de Conceito (PoC)**.
 
-Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus **desafios operacionais**, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa Prova de Conceito, **consolidando toda a esteira analítica em uma solução única, escalável e sustentável**, orientada à **geração contínua de valor para o negócio**.
+Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus **desafios operacionais**, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa solução, evidenciando que não se trata apenas da substituição de ferramentas, mas da **substituição da complexidade operacional por inteligência de negócio**, transformando uma PoC bem-sucedida em uma **plataforma analítica pronta para produção**.
 
 
 ## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
