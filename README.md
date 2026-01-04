@@ -1,10 +1,9 @@
 # RAFAEL TRINDADE - DDF_TECH_122025
 
+Este repositório apresenta a resolução do **Case Técnico para a posição de Engenheiro de Dados Júnior na Dadosfera**.
 
 > **Portfólio:** [https://rafa-trindade.github.io/](https://rafa-trindade.github.io/)<br>
 > **LinkedIn:** [https://www.linkedin.com/in/rafatrindade/](https://www.linkedin.com/in/rafatrindade/)
-
-Este repositório apresenta a resolução do **Case Técnico para a posição de Engenheiro de Dados Júnior na Dadosfera**.
 
 ## 🧭 Visão Geral
 
@@ -13,7 +12,6 @@ O projeto tem como contexto uma empresa de **E-commerce** e utiliza o **dataset 
 Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus desafios operacionais, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa solução. 
 
 Mais do que substituir ferramentas isoladas, a Dadosfera transforma uma esteira analítica fragmentada em uma **plataforma integrada, governada e escalável**, capaz de atender usuários técnicos, perfis analíticos e áreas de negócio ao longo de todo o ciclo de vida do dado, convertendo uma PoC bem-sucedida em uma **plataforma analítica pronta para produção e evolução contínua**.
-
 
 
 ## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
