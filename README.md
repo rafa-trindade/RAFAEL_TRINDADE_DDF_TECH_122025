@@ -778,8 +778,9 @@ O pitch aborda:
 > 📄 Narrativa executiva do case e pitch técnico: [`presentation.md`](docs/presentation/README.md)
 
 ---
+<br>
 
-# 🏁 Conclusão — Por que a Dadosfera?
+## 🏁 Conclusão - Por que a Dadosfera?
 
 A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem governada e orientada a negócio. Os dados da Olist foram estruturados desde a ingestão até o consumo, com qualidade, rastreabilidade, modelagem dimensional e visualizações analíticas funcionais.
 
