@@ -11,8 +11,6 @@ O projeto tem como contexto uma empresa de **E-commerce** e utiliza o **dataset 
 
 Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus desafios operacionais, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa solução. 
 
-Mais do que substituir ferramentas isoladas, a Dadosfera transforma uma esteira analítica fragmentada em uma **plataforma integrada, governada e escalável**, capaz de atender usuários técnicos, perfis analíticos e áreas de negócio ao longo de todo o ciclo de vida do dado, convertendo uma PoC bem-sucedida em uma **plataforma analítica pronta para produção e evolução contínua**.
-
 
 ## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
 A arquitetura proposta segue padrões modernos de **Lakehouse** + **Data Warehouse Analítico**, combinando **MinIO**, **DuckDB**, **PostgreSQL**, **dbt**, **Pandera** e **Dadosfera**.
@@ -779,16 +777,16 @@ O pitch aborda:
 
 <br>
 
-## 🏁 Conclusão - Por que a Dadosfera?
+## 🏁 Conclusão — Por que a Dadosfera?
 
-A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem estruturada e orientada ao uso do dado. Os dados da Olist foram organizados desde as camadas iniciais até o consumo analítico, com qualidade, rastreabilidade, modelagem dimensional e visualizações analíticas funcionais, validando a viabilidade técnica da solução.
+A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem estruturada e orientada ao uso do dado. Os dados da Olist foram organizados desde as camadas iniciais até o consumo analítico, com qualidade, rastreabilidade, modelagem dimensional e visualizações funcionais, validando a viabilidade técnica da solução.
 
-Ao mesmo tempo, a PoC evidencia um ponto crítico: **manter uma esteira analítica construída manualmente exige alto esforço operacional e coordenação constante**. É necessário gerenciar infraestrutura, monitorar pipelines, garantir disponibilidade, versionar documentação, manter catálogos atualizados e assegurar que a governança não se perca à medida que o ambiente cresce. Com o aumento do volume de dados, do número de usuários e da complexidade analítica, esse modelo tende a se tornar frágil, custoso e difícil de escalar.
+Ao mesmo tempo, a PoC evidencia um ponto crítico: **manter uma esteira analítica construída manualmente exige alto esforço operacional e coordenação constante**. É necessário gerenciar infraestrutura, monitorar pipelines, garantir disponibilidade, versionar documentação, manter catálogos atualizados e assegurar que a governança não se degrade à medida que o ambiente cresce. Com o aumento do volume de dados, do número de usuários e da complexidade analítica, esse modelo tende a se tornar frágil, custoso e difícil de escalar.
 
 É nesse contexto que a **Dadosfera se posiciona como a evolução natural da solução**.
 
-A plataforma organiza, em um único ambiente, todo o ciclo de vida do dado - da integração ao consumo - reduzindo a fragmentação entre ferramentas, camadas e perfis de uso. Em vez de uma esteira composta por componentes isolados, a Dadosfera oferece uma **plataforma integrada, governada e escalável**, capaz de atender **usuários técnicos, perfis analíticos e áreas de negócio** de forma consistente e segura.
+A plataforma organiza, em um único ambiente, todo o ciclo de vida do dado — da integração ao consumo — reduzindo a fragmentação entre ferramentas, camadas e perfis de uso. Em vez de uma esteira composta por componentes isolados, a Dadosfera oferece uma **plataforma integrada, governada e escalável**, capaz de atender **usuários técnicos, perfis analíticos e áreas de negócio** de forma consistente e segura.
 
-Com capacidades nativas de governança, escalabilidade e confiabilidade, a plataforma elimina a necessidade de gestão manual de infraestrutura e controles paralelos, passe a estar focado na exploração analítica, tomada de decisão e evolução dos casos de uso de dados.
+Com capacidades nativas de governança, escalabilidade e confiabilidade, a plataforma elimina a necessidade de gestão manual de infraestrutura e controles paralelos, permitindo que o foco esteja na **exploração analítica, na tomada de decisão e na evolução dos casos de uso de dados**.
 
-A PoC comprova que a estratégia de dados é tecnicamente viável. A **Dadosfera comprova que essa estratégia pode evoluir de forma sustentável**, acompanhando o crescimento da organização e transformando uma iniciativa pontual em uma **plataforma analítica pronta para operação contínua e evolução futura**.
+A PoC comprova que a estratégia de dados é tecnicamente viável. A **Dadosfera comprova que essa estratégia pode evoluir de forma sustentável**, acompanhando o crescimento da organização e transformando uma iniciativa pontual em uma **plataforma analítica preparada para operação contínua e evolução futura**.
