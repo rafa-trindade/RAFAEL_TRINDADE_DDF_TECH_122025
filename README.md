@@ -4,14 +4,16 @@
 > **Portfólio:** [https://rafa-trindade.github.io/](https://rafa-trindade.github.io/)<br>
 > **LinkedIn:** [https://www.linkedin.com/in/rafatrindade/](https://www.linkedin.com/in/rafatrindade/)
 
-
-## 📌 Introdução e Visão Geral
-
 Este repositório apresenta a resolução do **Case Técnico para a posição de Engenheiro de Dados Júnior na Dadosfera**.
+
+## Visão Geral
 
 O projeto tem como contexto uma empresa de **E-commerce** e utiliza o **dataset brasileiro da Olist (Kaggle)** como base para a construção de uma **plataforma de dados ponta a ponta**, desenvolvida no formato de **Prova de Conceito (PoC)**.
 
-Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus **desafios operacionais**, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa solução, evidenciando que não se trata apenas da substituição de ferramentas, mas da **substituição da complexidade operacional por inteligência de negócio**, transformando uma PoC bem-sucedida em uma **plataforma analítica pronta para produção**.
+Após validar a viabilidade técnica da arquitetura proposta, o projeto evidencia seus desafios operacionais, criando o contexto para demonstrar como a plataforma **Dadosfera** se posiciona como o próximo passo natural dessa solução. 
+
+Mais do que substituir ferramentas isoladas, a Dadosfera transforma uma esteira analítica fragmentada em uma **plataforma integrada, governada e escalável**, capaz de atender usuários técnicos, perfis analíticos e áreas de negócio ao longo de todo o ciclo de vida do dado, convertendo uma PoC bem-sucedida em uma **plataforma analítica pronta para produção e evolução contínua**.
+
 
 
 ## 🛠️ Arquitetura Geral da Solução - *Prova de Conceito (PoC)*
@@ -296,7 +298,7 @@ A escolha do Pandera permitiu implementar validações robustas e reproduzíveis
 
 ---
 
-### 5️⃣ Conclusão:
+### 5️⃣ Conclusão do Planejamento e Execução:
 
 O projeto foi planejado e executado com base nas boas práticas do **PMBOK**, garantindo controle de riscos, previsibilidade de custos e alocação eficiente de recursos, aliado a uma execução ágil, incremental e orientada à entrega de valor.
 
@@ -781,22 +783,14 @@ O pitch aborda:
 
 ## 🏁 Conclusão - Por que a Dadosfera?
 
-A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem governada e orientada a negócio. Os dados da Olist foram estruturados desde a ingestão até o consumo, com qualidade, rastreabilidade, modelagem dimensional e visualizações analíticas funcionais.
+A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem estruturada e orientada ao uso do dado. Os dados da Olist foram organizados desde as camadas iniciais até o consumo analítico, com qualidade, rastreabilidade, modelagem dimensional e visualizações analíticas funcionais, validando a viabilidade técnica da solução.
 
-No entanto, essa PoC também evidencia um ponto crítico: **manter essa arquitetura manualmente exige alto esforço operacional**. É necessário gerenciar servidores, garantir disponibilidade, monitorar pipelines, versionar documentação, manter catálogos atualizados, controlar acessos e assegurar que a governança não se degrade com o tempo. À medida que o volume de dados, o número de usuários e a complexidade analítica crescem, esse modelo se torna caro, frágil e pouco escalável.
+Ao mesmo tempo, a PoC evidencia um ponto crítico: **manter uma esteira analítica construída manualmente exige alto esforço operacional e coordenação constante**. É necessário gerenciar infraestrutura, monitorar pipelines, garantir disponibilidade, versionar documentação, manter catálogos atualizados e assegurar que a governança não se perca à medida que o ambiente cresce. Com o aumento do volume de dados, do número de usuários e da complexidade analítica, esse modelo tende a se tornar frágil, custoso e difícil de escalar.
 
 É nesse contexto que a **Dadosfera se posiciona como a evolução natural da solução**.
 
-A plataforma consolida, em um único ambiente:
-- **Centralização do ciclo de dados**, eliminando a fragmentação entre ingestão, catálogo, governança e consumo  
-- **Catálogo de dados vivo e automático**, com linhagem, metadados e contexto de negócio sempre atualizados  
-- **Governança aplicada por padrão**, reduzindo dependência de controles manuais e documentação paralela  
-- **Escalabilidade e confiabilidade**, sem a necessidade de gestão direta de infraestrutura  
-- **Democratização do acesso aos dados**, permitindo que analistas e áreas de negócio consumam informação com autonomia e segurança  
+A plataforma organiza, em um único ambiente, todo o ciclo de vida do dado - da integração ao consumo - reduzindo a fragmentação entre ferramentas, camadas e perfis de uso. Em vez de uma esteira composta por componentes isolados, a Dadosfera oferece uma **plataforma integrada, governada e escalável**, capaz de atender **usuários técnicos, perfis analíticos e áreas de negócio** de forma consistente e segura.
 
-A PoC prova que a estratégia de dados é tecnicamente viável. A **Dadosfera prova que essa estratégia pode escalar de forma sustentável, segura e econômica**.
+Com capacidades nativas de governança, escalabilidade e confiabilidade, a plataforma elimina a necessidade de gestão manual de infraestrutura e controles paralelos, passe a estar focado na exploração analítica, tomada de decisão e evolução dos casos de uso de dados.
 
-Em vez de investir tempo e recursos na manutenção de uma arquitetura distribuída e complexa, a organização passa a focar no que realmente gera valor: **análise, decisão e inovação orientadas por dados**.
-
-Dessa forma, a Dadosfera não substitui apenas ferramentas. Ela **substitui complexidade operacional por inteligência de negócio**, transformando uma PoC bem-sucedida em uma **plataforma analítica pronta para produção**.
-
+A PoC comprova que a estratégia de dados é tecnicamente viável. A **Dadosfera comprova que essa estratégia pode evoluir de forma sustentável**, acompanhando o crescimento da organização e transformando uma iniciativa pontual em uma **plataforma analítica pronta para operação contínua e evolução futura**.
