@@ -777,7 +777,7 @@ O pitch aborda:
 
 <br>
 
-## 🏁 Conclusão — Por que a Dadosfera?
+## 🏁 Conclusão - Por que a Dadosfera?
 
 A **Prova de Conceito (PoC)** demonstrou que é plenamente possível construir, com ferramentas open source, uma arquitetura analítica robusta, bem estruturada e orientada ao uso do dado. Os dados da Olist foram organizados desde as camadas iniciais até o consumo analítico, com qualidade, rastreabilidade, modelagem dimensional e visualizações funcionais, validando a viabilidade técnica da solução.
 
@@ -785,7 +785,7 @@ Ao mesmo tempo, a PoC evidencia um ponto crítico: **manter uma esteira analíti
 
 É nesse contexto que a **Dadosfera se posiciona como a evolução natural da solução**.
 
-A plataforma organiza, em um único ambiente, todo o ciclo de vida do dado — da integração ao consumo — reduzindo a fragmentação entre ferramentas, camadas e perfis de uso. Em vez de uma esteira composta por componentes isolados, a Dadosfera oferece uma **plataforma integrada, governada e escalável**, capaz de atender **usuários técnicos, perfis analíticos e áreas de negócio** de forma consistente e segura.
+A plataforma organiza, em um único ambiente, todo o ciclo de vida do dado - da integração ao consumo - reduzindo a fragmentação entre ferramentas, camadas e perfis de uso. Em vez de uma esteira composta por componentes isolados, a Dadosfera oferece uma **plataforma integrada, governada e escalável**, capaz de atender **usuários técnicos, perfis analíticos e áreas de negócio** de forma consistente e segura.
 
 Com capacidades nativas de governança, escalabilidade e confiabilidade, a plataforma elimina a necessidade de gestão manual de infraestrutura e controles paralelos, permitindo que o foco esteja na **exploração analítica, na tomada de decisão e na evolução dos casos de uso de dados**.
 
