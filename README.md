@@ -777,7 +777,6 @@ O pitch aborda:
 ### 🔗 Documentação Complementar
 > 📄 Narrativa executiva do case e pitch técnico: [`presentation.md`](docs/presentation/README.md)
 
----
 <br>
 
 ## 🏁 Conclusão - Por que a Dadosfera?
