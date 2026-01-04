@@ -6,7 +6,7 @@
 
 Este repositório apresenta a resolução do **Case Técnico para a posição de Engenheiro de Dados Júnior na Dadosfera**.
 
-## Visão Geral
+## 🧭 Visão Geral
 
 O projeto tem como contexto uma empresa de **E-commerce** e utiliza o **dataset brasileiro da Olist (Kaggle)** como base para a construção de uma **plataforma de dados ponta a ponta**, desenvolvida no formato de **Prova de Conceito (PoC)**.
 
