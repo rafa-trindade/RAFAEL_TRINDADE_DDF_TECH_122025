@@ -136,9 +136,9 @@ Descreve como a **qualidade de dados** é garantida ao longo de todo o pipeline:
 📁 [`docs/infrastructure/*`](docs/infrastructure)
 
 Documenta as configurações técnicas e operacionais do ambiente de execução,
-distribuídas em múltiplos guias técnicos:
+organizadas em guias específicos, incluindo:
+- Guia de Execução do Projeto
 - PostgreSQL com SSL/TLS em VPS (Docker)
-- Execução, dependências e orquestração do dbt (staging, core e marts)
 
 ---
 
@@ -716,19 +716,32 @@ O dashboard consolidando todas as visualizações criadas neste item está dispo
 
 ### Considerações Técnicas:
 
-Para viabilizar a integração segura entre a infraestrutura de dados e a plataforma da Dadosfera, foi necessária a configuração de um **banco PostgreSQL em container Docker com SSL/TLS habilitado**, executando em uma **VPS dedicada**.
+Para viabilizar a integração segura entre a infraestrutura de dados e a plataforma da Dadosfera,
+foi configurado um **banco PostgreSQL executando em container Docker, com SSL/TLS habilitado**,
+implantado em uma **VPS dedicada**.
 
-Essa configuração garantiu:
-- Comunicação criptografada entre a Dadosfera e o banco de dados
-- Segurança no processo de ingestão e processamento dos dados
-- Estabilidade e confiabilidade para execução dos pipelines
+Essa configuração foi adotada após a tentativa de acesso ao PostgreSQL diretamente pela
+plataforma da Dadosfera, momento em que a conexão não era aceita pelo servidor da VPS.
+A habilitação do SSL/TLS foi necessária para permitir a comunicação segura entre os ambientes,
+atendendo aos requisitos de segurança da plataforma consumidora.
+
+Essa abordagem garante que todo o tráfego entre as ferramentas externas e o Data Warehouse
+ocorra de forma **criptografada**, atendendo requisitos básicos de segurança para ambientes
+analíticos e de integração de dados.
+
+Essa configuração assegura:
+- Comunicação criptografada via SSL/TLS entre a Dadosfera e o PostgreSQL
+- Maior segurança durante os processos de ingestão, transformação e exploração dos dados
+- Estabilidade e confiabilidade na execução dos pipelines analíticos
+
+A configuração dos certificados, volumes e parâmetros de SSL está documentada separadamente,
+mantendo a separação entre **arquitetura**, **infraestrutura** e **execução operacional**.
 
 ---
 
 ### 🔗 Documentação Técnica Relacionada
 > 📄 Arquitetura e organização dos pipelines: [`data_architecture.md`](docs/data_architecture/README.md)  
-> 📄 Estratégia de governança, versionamento e reprocessamento: [`data_governance.md`](docs/data_governance/README.md)  
-> 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgres_ssl_setup.md`](docs/infrastructure/postgres_ssl_setup.md)
+> 📄 Infraestrutura - PostgreSQL com SSL/TLS em Docker: [`postgresql_ssl_setup.md`](docs/infrastructure/postgresql_ssl_setup.md)
 
 ---
 
